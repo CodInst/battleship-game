@@ -1,13 +1,76 @@
+def validate_input_player(value):
+        """
+        Raises ValueError if the player name is an empty string,
+        but allow special character except space.
+        """
+        try:
+              if value == '' or value.isspace():
+                    raise ValueError(
+                          f"The name should contain at least a charcater"
+                    )
+        except ValueError as e:
+              print(f"Invalid data: {e}, please try again.\n")
+              return False
+        
+        return True
+
+
+def validate_input_board(value):
+        """
+        Raises ValueError if board Size is not 5,6 or7.
+        """
+        try:
+              int(value)
+              if int(value) not in [5,6,7]:
+                    raise ValueError
+        except ValueError:
+              print(f"Error: the board size is 5,6 or 7, you provided {value}, please try again.\n")
+              return False  
+    
+        return True
+
+
+def validate_input_ships(value):
+        """
+        Raises ValueError if A number of Ships is not 4,5 or 6.
+        """
+        try:
+              int(value)
+              if int(value) not in [4,5,6]:
+                    raise ValueError
+        except ValueError:
+              print(f"Error: the number of ships is 4,5 or 6, you provided {value}, please try again.\n")
+              return False  
+    
+        return True
+
+        
+        return True
+
+
 def input_player():
      """
     The function allowes the input of:
     the player's name, size of the board and number of ships. 
     """
-     player_name = input("Please enter your name:\n")
-     board_size = int(input("Select a board size:5,6 or 7\n"))
-     num_ships = int(input("Select a number of ships: 4,5 or 6\n"))
+     while True:
+           player_name = input("Please enter your name:\n").capitalize()
+           if validate_input_player(player_name):
+                 break
 
-     return player_name, board_size, num_ships
+     while True:
+           board_size = input("Select a board size: 5,6 or 7\n")
+           if validate_input_board(board_size):
+                 break    
+
+     while True:
+           num_ships = input("Select a number of ships: 4,5 or 6\n")
+           if validate_input_ships(num_ships):
+                 break
+           
+     return player_name , board_size, num_ships
+
+
 
 def new_game():
     """
@@ -26,7 +89,11 @@ def new_game():
         +======================================+
         """)
     player_name, board_size, num_ships = input_player()
+    print()
+    print('=' * 35)
+    print(f"WELCOME TO THE GAME {player_name}")
+    print(f"You selected a board size of {board_size}")
+    print(f"Each player will have {num_ships} battleships")
+    print('=' * 35)
 
-    return player_name, board_size, num_ships
-
-print(new_game())
+new_game()
