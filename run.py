@@ -44,9 +44,6 @@ def validate_input_ships(value):
     
         return True
 
-        
-        return True
-
 
 def input_player():
      """
