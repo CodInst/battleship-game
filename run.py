@@ -102,7 +102,6 @@ def new_game():
     The function starts a new game. It gives an introductory text.
     It runs all function of the program.
     """
-
     print(
         """
         +======================================+
