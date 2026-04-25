@@ -1,3 +1,18 @@
+scores = {"computer": 0, "player": 0}
+
+class Board:
+      """
+      Description of the class
+      """
+      
+      def __init__(self, board_size, num_ships, player_name, type):
+          self.board_size = board_size
+          self.board =  [["." for x in range(board_size)] for y in range(board_size)]
+          self.board_size = board_size
+          self.num_ships = num_ships
+          self.player_name = player_name
+          self.type = type
+
 def validate_input_player(value):
         """
         Raises ValueError if the player name is an empty string,
