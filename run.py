@@ -20,7 +20,7 @@ class Board:
           return [print("   ".join(row)) for row in self.board]
               
 
-def validate_input_player(value):
+def initial_validate_input_player(value):
         """
         The function raises a ValueError if the player name is an empty string,
         but allow special character except space.
@@ -74,7 +74,7 @@ def input_player():
     """
      while True:
            player_name = input("Please enter your name:\n").capitalize()
-           if validate_input_player(player_name):
+           if initial_validate_input_player(player_name):
                  break
 
      while True:
