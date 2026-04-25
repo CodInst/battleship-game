@@ -13,6 +13,10 @@ class Board:
           self.player_name = player_name
           self.type = type
 
+      def display_board(self):
+          return [print("   ".join(row)) for row in self.board]
+              
+
 def validate_input_player(value):
         """
         Raises ValueError if the player name is an empty string,
@@ -109,3 +113,5 @@ def new_game():
     print('=' * 35)
 
 new_game()
+board = Board(5, 6, "test", "X")
+board.display_board()
