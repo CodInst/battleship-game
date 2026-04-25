@@ -1,3 +1,6 @@
+from random import randint
+import time
+
 scores = {"computer": 0, "player": 0}
 
 class Board:
@@ -19,7 +22,7 @@ class Board:
 
 def validate_input_player(value):
         """
-        Raises ValueError if the player name is an empty string,
+        The function raises a ValueError if the player name is an empty string,
         but allow special character except space.
         """
         try:
@@ -36,7 +39,7 @@ def validate_input_player(value):
 
 def validate_input_board(value):
         """
-        Raises ValueError if board Size is not 5,6 or7.
+        The function raises a ValueError if board Size is not 5,6 or7.
         """
         try:
               int(value)
@@ -51,7 +54,7 @@ def validate_input_board(value):
 
 def validate_input_ships(value):
         """
-        Raises ValueError if A number of Ships is not 4,5 or 6.
+        The function raises a ValueError if A number of Ships is not 4,5 or 6.
         """
         try:
               int(value)
