@@ -87,8 +87,14 @@ def input_player():
            if validate_input_ships(num_ships):
                  break
            
-     return player_name , board_size, num_ships
+     return player_name , int(board_size), int(num_ships)
 
+
+def guess_random(board_size):
+    """
+    The function will provide a random integer for the computer turn
+    """
+    return randint(0, board_size - 1)
 
 
 def new_game():
@@ -108,7 +114,7 @@ def new_game():
         +======================================+
         """)
     player_name, board_size, num_ships = input_player()
-    board = Board(int(board_size), int(num_ships), player_name, "X")
+    board = Board(board_size, num_ships, player_name, "X")
     print()
     print('=' * 35)
     print(f"WELCOME TO THE GAME {player_name}")
@@ -118,5 +124,6 @@ def new_game():
     print()
     board.display_board()
     print()
+    print(guess_random(board_size))
 
 new_game()
