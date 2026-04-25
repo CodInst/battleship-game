@@ -90,7 +90,7 @@ def input_player():
      return player_name , int(board_size), int(num_ships)
 
 
-def guess_random(board_size):
+def random_integer(board_size):
     """
     The function will provide a random integer for the computer turn
     """
@@ -124,6 +124,6 @@ def new_game():
     print()
     board.display_board()
     print()
-    print(guess_random(board_size))
+    print(random_integer(board_size))
 
 new_game()
