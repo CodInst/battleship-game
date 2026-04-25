@@ -105,13 +105,15 @@ def new_game():
         +======================================+
         """)
     player_name, board_size, num_ships = input_player()
+    board = Board(int(board_size), int(num_ships), player_name, "X")
     print()
     print('=' * 35)
     print(f"WELCOME TO THE GAME {player_name}")
     print(f"You selected a board size of {board_size}")
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
+    print()
+    board.display_board()
+    print()
 
 new_game()
-board = Board(5, 6, "test", "X")
-board.display_board()
