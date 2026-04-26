@@ -90,11 +90,11 @@ def initial_input_player():
      return player_name , int(board_size), int(num_ships)
 
 
-def random_integer(board_size):
+def random_integer(value):
     """
     The function will provide a random integer for the computer turn
     """
-    return randint(0, board_size - 1)
+    return randint(0, value - 1)
 
 
 def new_game():
