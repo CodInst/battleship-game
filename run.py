@@ -20,7 +20,7 @@ class Board:
           return [print("   ".join(row)) for row in self.board]
               
 
-def initial_validate_input_player(value):
+def initial_validate_input_player_name(value):
         """
         The function raises a ValueError if the player name is an empty string,
         but allow special character except space.
@@ -67,14 +67,14 @@ def validate_input_ships(value):
         return True
 
 
-def input_player():
+def initial_input_player():
      """
     The function allowes the input of:
     the player's name, size of the board and number of ships. 
     """
      while True:
            player_name = input("Please enter your name:\n").capitalize()
-           if initial_validate_input_player(player_name):
+           if initial_validate_input_player_name(player_name):
                  break
 
      while True:
@@ -112,7 +112,7 @@ def new_game():
         |     -the number of Ships: 4,5 or 6   |
         +======================================+
         """)
-    player_name, board_size, num_ships = input_player()
+    player_name, board_size, num_ships = initial_input_player()
     board = Board(board_size, num_ships, player_name, "X")
     print()
     print('=' * 35)
