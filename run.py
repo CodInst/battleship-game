@@ -123,6 +123,5 @@ def new_game():
     print()
     board.display_board()
     print()
-    print(random_integer(board_size))
 
 new_game()
