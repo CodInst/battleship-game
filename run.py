@@ -67,7 +67,7 @@ class Board:
             self.board = player_board
             player_board = self.format_display_board()            
             print('=' * 20)
-            print("player Board")
+            print("Player Board")
             print('=' * 20)
                         
             return player_board
