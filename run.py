@@ -1,7 +1,13 @@
-from random import randint
+import random
 import time
 
 scores = {"computer": 0, "player": 0}
+
+def random_integer(value):
+    """
+    The function will provide a random integer for the computer turn
+    """
+    return random.randint(0, value - 1)
 
 class Board:
       """
@@ -88,13 +94,6 @@ def initial_input_player():
                  break
            
      return player_name , int(board_size), int(num_ships)
-
-
-def random_integer(value):
-    """
-    The function will provide a random integer for the computer turn
-    """
-    return randint(0, value - 1)
 
 
 def new_game():
