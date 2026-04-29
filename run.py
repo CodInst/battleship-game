@@ -13,7 +13,6 @@ class Board:
       """
       Description of the class
       """
-      
       def __init__(self, board_size, num_ships, player_name, type):
           self.board_size = board_size
           self.board =  [["." for x in range(board_size)] for y in range(board_size)]
@@ -27,19 +26,31 @@ class Board:
       
       def initial_placement_ships(self):
             """
-            The function will create a random placement of ships on
+            The function will create a initial random placement of ships on
             the board for the player and the computer.
             """
-            initial_board_row = []
-            initial_board_column = []
-            for ship in range(self.num_ships): # It loops through ship number 1, number 2, number 3...
-                  initial_board_row.append(random_integer(ship +1))
-                  initial_board_column.append(random_integer(ship +1))
-            
+            initial_board_row = random.sample(range(0, self.num_ships), self.num_ships) # Generate unique random numbers for the rows in a list
+            initial_board_column = random.sample(range(0, self.num_ships), self.num_ships) # Generate unique random numbers for the columns in a list
             initial_board = list(zip(initial_board_row, initial_board_column))
 
-            return  print(initial_board) # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3), (R4,C4), (R5,C5)]  
+            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3), (R4,C4), (R5,C5)]
               
+      def initial_display_board(self):
+            """
+            The function will place the random generated ships placement
+            on the board for the player and the computer.
+            """
+            initial_placement_computer_board = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
+            initial_placement_player_board = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
+            empty_board_computer = [["." for x in range(self.board_size)] for y in range(self.num_ships)] # empty board without the ships
+            empty_player_board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
+
+            for tple in range(self.num_ships):
+                  empty_board_computer[initial_placement_computer_board[tple][1]][initial_placement_computer_board[tple][0]] = "X" # it places the ships on the board
+                  empty_player_board[initial_placement_player_board[tple][1]][initial_placement_player_board[tple][0]] = "X" # it places the ships on the board
+                  
+            return print(f"Computer Board\n {empty_board_computer}\n Player board\n {empty_player_board}")
+
 
 def initial_validate_input_player_name(value):
         """
@@ -136,7 +147,7 @@ def new_game():
     print('=' * 35)
     print()
     board.display_board()
-    board.initial_placement_ships()
+    board.initial_display_board()
     print()
 
 new_game()
