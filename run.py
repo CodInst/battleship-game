@@ -34,21 +34,31 @@ class Board:
 
             return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3), (R4,C4), (R5,C5)]
               
-      def initial_display_board(self):
+      def initial_display_board_cpt(self):
             """
             The function will place the random generated ships placement
-            on the board for the player and the computer.
+            on the board for the computer.
             """
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
-            initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
             computer_board = [["." for x in range(self.board_size)] for y in range(self.num_ships)] # empty board without the ships
-            board_player = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
                   computer_board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
+                                    
+            return computer_board
+      
+      def initial_display_board_plr(self):
+            """
+            The function will place the random generated ships placement
+            on the board for the player.
+            """
+            initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
+            board_player = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
+
+            for tple in range(self.num_ships):
                   board_player[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
                   
-            return print(f"Computer Board\n {computer_board}\n Player board\n {board_player}")
+            return board_player
 
 
 def initial_validate_input_player_name(value):
