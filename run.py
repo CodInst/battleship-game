@@ -24,6 +24,21 @@ class Board:
 
       def display_board(self):
           return [print("   ".join(row)) for row in self.board]
+      
+      def initial_placement_ships(self):
+            """
+            The function will create a random placement of ships on
+            the board for the player and the computer.
+            """
+            initial_board_row = []
+            initial_board_column = []
+            for ship in range(self.num_ships): # It loops through ship number 1, number 2, number 3...
+                  initial_board_row.append(random_integer(ship +1))
+                  initial_board_column.append(random_integer(ship +1))
+            
+            initial_board = list(zip(initial_board_row, initial_board_column))
+
+            return  print(initial_board) # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3), (R4,C4), (R5,C5)]  
               
 
 def initial_validate_input_player_name(value):
@@ -121,6 +136,7 @@ def new_game():
     print('=' * 35)
     print()
     board.display_board()
+    board.initial_placement_ships()
     print()
 
 new_game()
