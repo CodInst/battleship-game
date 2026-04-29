@@ -47,6 +47,9 @@ class Board:
                        
             self.board = computer_board
             computer_board = self.format_display_board()
+            print('=' * 20)
+            print("Computer Board")
+            print('=' * 20)
                                     
             return computer_board
       
@@ -63,7 +66,10 @@ class Board:
                   
             self.board = player_board
             player_board = self.format_display_board()            
-            
+            print('=' * 20)
+            print("player Board")
+            print('=' * 20)
+                        
             return player_board
 
 
