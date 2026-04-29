@@ -14,14 +14,13 @@ class Board:
       Description of the class
       """
       def __init__(self, board_size, num_ships, player_name, type):
-          self.board_size = board_size
-          self.board =  [["." for x in range(board_size)] for y in range(board_size)]
-          self.board_size = board_size
-          self.num_ships = num_ships
-          self.player_name = player_name
-          self.type = type
+            self.board = [["." for x in range(board_size)] for y in range(board_size)]
+            self.board_size = board_size
+            self.num_ships = num_ships
+            self.player_name = player_name
+            self.type = type
 
-      def display_board(self):
+      def format_display_board(self):
           return [print("   ".join(row)) for row in self.board]
       
       def initial_placement_ships(self):
@@ -146,7 +145,7 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.display_board()
+    board.format_display_board()
     board.initial_display_board()
     print()
 
