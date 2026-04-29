@@ -44,6 +44,9 @@ class Board:
 
             for tple in range(self.num_ships):
                   computer_board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
+                       
+            self.board = computer_board
+            computer_board = self.format_display_board()
                                     
             return computer_board
       
@@ -53,12 +56,15 @@ class Board:
             on the board for the player.
             """
             initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
-            board_player = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
+            player_board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
-                  board_player[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
+                  player_board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
                   
-            return board_player
+            self.board = player_board
+            player_board = self.format_display_board()            
+            
+            return player_board
 
 
 def initial_validate_input_player_name(value):
@@ -155,8 +161,8 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.format_display_board()
-    board.initial_display_board()
+    board.initial_display_board_cpt()
     print()
+    board.initial_display_board_plr()
 
 new_game()
