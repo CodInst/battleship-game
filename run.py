@@ -44,15 +44,12 @@ class Board:
 
             for tple in range(self.num_ships):
                   computer_board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
-                       
-            self.board = computer_board
-            computer_board = self.format_display_board()
-            print('=' * 20)
-            print("Computer Board")
-            print('=' * 20)
+
+            self.display_board_info("Computer")                       
+            self.board = computer_board = self.format_display_board()
                                     
             return computer_board
-      
+         
       def initial_display_board_plr(self):
             """
             The function will place the random generated ships placement
@@ -63,15 +60,21 @@ class Board:
 
             for tple in range(self.num_ships):
                   player_board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
-                  
-            self.board = player_board
-            player_board = self.format_display_board()            
-            print('=' * 20)
-            print("Player Board")
-            print('=' * 20)
+            
+            self.display_board_info("Player")      
+            self.board = player_board = player_board = self.format_display_board()            
                         
             return player_board
 
+      def display_board_info(self, player_type):
+            print('=' * 17)            
+            if player_type == "Computer":
+                  print("Computer Board")               
+            else:
+                  print("Player Board")
+            print('=' * 17)
+                              
+            
 
 def initial_validate_input_player_name(value):
         """
