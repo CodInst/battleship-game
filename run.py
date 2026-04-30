@@ -72,15 +72,22 @@ class Board:
             """
             The method creates a header for the computer board and
             the player board.
-            """ 
-            print('=' * 17)            
+            """
+            self.player_type = player_type
+            if self.board_size == 5:
+                  delim_display = ('=' * 17)
+            elif self.board_size == 6:
+                  delim_display = ('=' * 21)
+            else:
+                  delim_display = ('=' * 25)
+            
+            print(delim_display)
             if player_type == "Computer":
-                  print("Computer Board")               
+                  print("Computer Board")           
             else:
                   print("Player Board")
-            print('=' * 17)
-                              
-            
+            print(delim_display)            
+                          
 
 def initial_validate_input_player_name(value):
         """
