@@ -25,7 +25,7 @@ class Board:
       
       def initial_placement_ships(self):
             """
-            The function will create a initial random placement of ships on
+            The method will create a initial random placement of ships on
             the board for the player and the computer.
             """
             initial_board_row = random.sample(range(0, self.num_ships), self.num_ships)  # Generate unique random numbers for the rows in a list
@@ -36,7 +36,7 @@ class Board:
               
       def initial_display_board_cpt(self):
             """
-            The function will place the random generated ships placement
+            The method will place the random generated ships placement
             on the board for the computer.
             """
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
@@ -52,7 +52,7 @@ class Board:
          
       def initial_display_board_plr(self):
             """
-            The function will place the random generated ships placement
+            The method will place the random generated ships placement
             on the board for the player.
             """
             initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
@@ -67,6 +67,10 @@ class Board:
             return player_board
 
       def display_board_info(self, player_type):
+            """
+            The method creates a header for the computer board and
+            the player board
+            """ 
             print('=' * 17)            
             if player_type == "Computer":
                   print("Computer Board")               
@@ -78,8 +82,8 @@ class Board:
 
 def initial_validate_input_player_name(value):
         """
-        The function raises a ValueError if the player name is an empty string,
-        but allow special character except space.
+        The function raises a ValueError if the player name is an
+        empty string but allow special character except space.
         """
         try:
               if value == '' or value.isspace():
@@ -165,7 +169,7 @@ def new_game():
     board = Board(board_size, num_ships, player_name, "X")
     print()
     print('=' * 35)
-    print(f"WELCOME TO THE GAME {player_name}")
+    print(f"WELCOME TO THE GAME, {player_name}")
     print(f"You selected a board size of {board_size}")
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
