@@ -62,7 +62,7 @@ class Board:
                   player_board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
             
             self.display_board_info("Player")      
-            self.board = player_board = player_board = self.format_display_board()            
+            self.board = player_board = self.format_display_board()            
                         
             return player_board
 
