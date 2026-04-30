@@ -28,11 +28,11 @@ class Board:
             The method will create a initial random placement of ships on
             the board for the player and the computer.
             """
-            initial_board_row = random.sample(range(0, self.num_ships), self.num_ships)  # Generate unique random numbers for the rows in a list
-            initial_board_column = random.sample(range(0, self.num_ships), self.num_ships)  # Generate unique random numbers for the columns in a list
+            initial_board_row = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the rows in a list
+            initial_board_column = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the columns in a list
             initial_board = list(zip(initial_board_row, initial_board_column))
 
-            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3), (R4,C4), (R5,C5)]
+            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
               
       def initial_display_board_cpt(self):
             """
@@ -40,13 +40,14 @@ class Board:
             on the board for the computer.
             """
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
-            computer_board = [["." for x in range(self.board_size)] for y in range(self.num_ships)] # empty board without the ships
+            computer_board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
                   computer_board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
 
             self.display_board_info("Computer")                       
-            self.board = computer_board = self.format_display_board()
+            self.board = computer_board
+            computer_board = self.format_display_board()
                                     
             return computer_board
          
@@ -62,14 +63,15 @@ class Board:
                   player_board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
             
             self.display_board_info("Player")      
-            self.board = player_board = self.format_display_board()            
+            self.board = player_board
+            player_board = self.format_display_board()        
                         
             return player_board
 
       def display_board_info(self, player_type):
             """
             The method creates a header for the computer board and
-            the player board
+            the player board.
             """ 
             print('=' * 17)            
             if player_type == "Computer":
@@ -174,7 +176,7 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.initial_display_board_cpt()
+    board.initial_display_board_cpt() # To be removed, it tests the code
     print()
     board.initial_display_board_plr()
 
