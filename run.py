@@ -158,6 +158,52 @@ def initial_input_player():
            
      return player_name , int(board_size), int(num_ships)
 
+def validate_integer_grid(value, board_size):
+    """
+    The function raises a ValueError if the number is not an
+    integer or outside of the grid.
+    """
+    try:
+        int(value)
+        if int(value) not in range(1, board_size):
+            raise ValueError
+      
+    except ValueError:
+          print(f"The number is not an integer or within the range of 1 to {board_size} ")
+          return False
+    
+    return True
+
+def call_shot_player(board_size):
+    """
+    The function allows the player to make guess by
+    selecting a row and a column.
+    """
+    while True:
+          print(f"Select a Row Number between 1 and {board_size} included")
+          row_num_plr = int(input()) - 1
+          if validate_integer_grid(row_num_plr, board_size):
+                break
+          
+    while True:  
+          print(f"Select a Column Number between 1 and {board_size} included")
+          column_num_plr = int(input()) - 1
+          if validate_integer_grid(column_num_plr, board_size):
+                break
+    
+    return row_num_plr, column_num_plr
+    
+def call_shot_computer(board_size):
+    """
+    The function allows a random selection of a row
+    and a column for the computer.
+    """    
+    print("Row Selction from computer ")
+    row_num_cpt = random_integer(board_size)
+    print("Column Selction from computer")
+    column_num_cpt = random_integer(board_size)
+
+    return row_num_cpt, column_num_cpt
 
 def new_game():
     """
@@ -170,7 +216,7 @@ def new_game():
         | Welcome to ULTIMATE BATTLESHIPS!!    |
         | Top left corner is row: 0, col:0     |
         | Select a number for:                 |
-        |     -the board Size: 6 or 7        |
+        |     -the board Size: 6 or 7          |
         |     -the number of Ships: 4,5 or 6   |
         +======================================+
         """)
@@ -187,5 +233,10 @@ def new_game():
     print()
     board.initial_display_board_plr()
     print()
+    player_selection = call_shot_player(board_size)
+    computer_selection = call_shot_computer(board_size)
+    
+    print(player_selection)
+    print(computer_selection) # To be removed, it tests the code
 
 new_game()
