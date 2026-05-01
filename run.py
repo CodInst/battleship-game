@@ -181,13 +181,13 @@ def validate_integer_grid(value, board_size):
     
     return True
 
-def validate_guess_already_used(selection, guessed_shot_player):
+def validate_guess_already_used(selection, guessed_shot):
     """
     The function raises a ValueError if the selection has already
     been used.
     """
     try:
-          if selection in guessed_shot_player:
+          if selection in guessed_shot:
                 raise ValueError
 
     except ValueError:
