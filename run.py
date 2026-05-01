@@ -2,7 +2,8 @@ import random
 import time
 
 scores = {"computer": 0, "player": 0}
-guessed_shot = set()
+guessed_shot_player = set()
+guessed_shot_computer = set()
 player_initial_selection = set()
 computer_initial_selection = set()
 
@@ -180,13 +181,13 @@ def validate_integer_grid(value, board_size):
     
     return True
 
-def validate_guess_already_used(selection, guessed_shot):
+def validate_guess_already_used(selection, guessed_shot_player):
     """
     The function raises a ValueError if the selection has already
     been used.
     """
     try:
-          if selection in guessed_shot:
+          if selection in guessed_shot_player:
                 raise ValueError
 
     except ValueError:
@@ -200,7 +201,7 @@ def call_shot_player(board_size):
     The function allows the player to make guess by
     selecting a row and a column.
     """
-    global guessed_shot
+    global guessed_shot_player
     
     while True:
           while True:
@@ -216,7 +217,7 @@ def call_shot_player(board_size):
                       break
           
           selection = row_num_plr, column_num_plr
-          if validate_guess_already_used(selection, guessed_shot):
+          if validate_guess_already_used(selection, guessed_shot_player):
                 break
                        
     return row_num_plr, column_num_plr
@@ -264,12 +265,12 @@ def new_game():
     player_guess = call_shot_player(board_size)
     computer_guess = call_shot_computer(board_size)
     
-    print(guessed_shot)  # To be removed, it tests the code   
-    guessed_shot.add(player_guess) # To be removed, it tests the code
+    guessed_shot_player.add(player_guess) # To be removed, it tests the code
+    guessed_shot_computer.add(computer_guess) # To be removed, it tests the code
     
     print(player_guess) # To be removed, it tests the code
     print(computer_guess) # To be removed, it tests the code
-    print(guessed_shot) # To be removed, it tests the code
+    print(guessed_shot_player) # To be removed, it tests the code
     print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
     print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
     
