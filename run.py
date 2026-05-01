@@ -3,6 +3,8 @@ import time
 
 scores = {"computer": 0, "player": 0}
 guessed_shot = set()
+player_selection = set()
+computer_selection = set()
 
 def random_integer(value):
     """
