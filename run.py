@@ -261,14 +261,14 @@ def new_game():
     print()
     board.initial_display_board_plr()
     print()
-    player_selection = call_shot_player(board_size)
-    computer_selection = call_shot_computer(board_size)
+    player_guess = call_shot_player(board_size)
+    computer_guess = call_shot_computer(board_size)
     
     print(guessed_shot)  # To be removed, it tests the code   
-    guessed_shot.add(player_selection) # To be removed, it tests the code
+    guessed_shot.add(player_guess) # To be removed, it tests the code
     
-    print(player_selection) # To be removed, it tests the code
-    print(computer_selection) # To be removed, it tests the code
+    print(player_guess) # To be removed, it tests the code
+    print(computer_guess) # To be removed, it tests the code
     print(guessed_shot) # To be removed, it tests the code
     print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
     print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
