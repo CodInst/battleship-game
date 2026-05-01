@@ -226,11 +226,18 @@ def call_shot_computer(board_size):
     """
     The function allows a random selection of a row
     and a column for the computer.
-    """    
-    print("Row Selction from computer ")
-    row_num_cpt = random_integer(board_size)
-    print("Column Selction from computer")
-    column_num_cpt = random_integer(board_size)
+    """
+    global guessed_shot_computer
+    
+    while True:
+          print("Row Selction from computer ")
+          row_num_cpt = random_integer(board_size)
+          print("Column Selction from computer")
+          column_num_cpt = random_integer(board_size)
+          selection = row_num_cpt, column_num_cpt
+          
+          if selection not in guessed_shot_computer: # Check if the selection has been already used.
+                break
 
     return row_num_cpt, column_num_cpt
 
@@ -271,6 +278,7 @@ def new_game():
     print(player_guess) # To be removed, it tests the code
     print(computer_guess) # To be removed, it tests the code
     print(guessed_shot_player) # To be removed, it tests the code
+    print(guessed_shot_computer) # To be removed, it tests the code
     print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
     print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
     
