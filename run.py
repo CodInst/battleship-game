@@ -77,12 +77,12 @@ class Board:
             if self.board_size == 5:
                   delim_display = ('=' * 17)
             elif self.board_size == 6:
-                  delim_display = ('=' * 21)
+                  delim_display = ('=' * 21)  
             else:
                   delim_display = ('=' * 25)
             
             print(delim_display)
-            if player_type == "Computer":
+            if self.player_type == "Computer":
                   print("Computer Board")           
             else:
                   print("Player Board")
