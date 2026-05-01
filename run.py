@@ -112,10 +112,10 @@ def validate_input_board(value):
         """
         try:
               int(value)
-              if int(value) not in [5,6,7]:
+              if int(value) not in [6,7]:
                     raise ValueError
         except ValueError:
-              print(f"Error: the board size is 5,6 or 7, you provided {value}, please try again.\n")
+              print(f"Error: the board size is 6 or 7, you provided {value}, please try again.\n")
               return False  
     
         return True
@@ -147,7 +147,7 @@ def initial_input_player():
                  break
 
      while True:
-           board_size = input("Select a board size: 5,6 or 7\n")
+           board_size = input("Select a board size: 6 or 7\n")
            if validate_input_board(board_size):
                  break    
 
@@ -170,7 +170,7 @@ def new_game():
         | Welcome to ULTIMATE BATTLESHIPS!!    |
         | Top left corner is row: 0, col:0     |
         | Select a number for:                 |
-        |     -the board Size: 5,6 or 7        |
+        |     -the board Size: 6 or 7        |
         |     -the number of Ships: 4,5 or 6   |
         +======================================+
         """)
@@ -186,5 +186,6 @@ def new_game():
     board.initial_display_board_cpt() # To be removed, it tests the code
     print()
     board.initial_display_board_plr()
+    print()
 
 new_game()
