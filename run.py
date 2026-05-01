@@ -3,8 +3,8 @@ import time
 
 scores = {"computer": 0, "player": 0}
 guessed_shot = set()
-player_selection = set()
-computer_selection = set()
+player_initial_selection = set()
+computer_initial_selection = set()
 
 def random_integer(value):
     """
@@ -42,12 +42,14 @@ class Board:
             The method will place the random generated ships placement
             on the board for the computer.
             """
+            global computer_initial_selection
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
+            computer_initial_selection = set(initial_placement_computer) # It adds the coordinates randomly selected on the shsips into the set.
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
                   self.board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
-
+            
             self.display_board_info("Computer")                       
             self.format_display_board()
                                     
@@ -58,7 +60,10 @@ class Board:
             The method will place the random generated ships placement
             on the board for the player.
             """
+            global player_initial_selection
+            
             initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
+            player_initial_selection = set(initial_placement_player) # It adds the coordinates randomly selected on the shsips into the set.
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
@@ -195,6 +200,8 @@ def call_shot_player(board_size):
     The function allows the player to make guess by
     selecting a row and a column.
     """
+    global guessed_shot
+    
     while True:
           while True:
                 print(f"Select a Row Number between 1 and {board_size} included")
@@ -263,5 +270,7 @@ def new_game():
     print(player_selection) # To be removed, it tests the code
     print(computer_selection) # To be removed, it tests the code
     print(guessed_shot) # To be removed, it tests the code
-
+    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
+    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
+    
 new_game()
