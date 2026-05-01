@@ -2,6 +2,7 @@ import random
 import time
 
 scores = {"computer": 0, "player": 0}
+guessed_shot = set()
 
 def random_integer(value):
     """
@@ -174,23 +175,43 @@ def validate_integer_grid(value, board_size):
     
     return True
 
+def validate_selection_already_used(selection, guessed_shot):
+    """
+    The function raises a ValueError if the selection has already
+    been used.
+    """
+    try:
+          if selection in guessed_shot:
+                raise ValueError
+
+    except ValueError:
+          print(f"You have already used these numbers Row: {selection[0]} and Column: {selection[1]}. ")
+          return False  
+    
+    return True
+
 def call_shot_player(board_size):
     """
     The function allows the player to make guess by
     selecting a row and a column.
     """
     while True:
-          print(f"Select a Row Number between 1 and {board_size} included")
-          row_num_plr = int(input()) - 1
-          if validate_integer_grid(row_num_plr, board_size):
-                break
+          while True:
+                print(f"Select a Row Number between 1 and {board_size} included")
+                row_num_plr = int(input()) - 1
+                if validate_integer_grid(row_num_plr, board_size):
+                      break
           
-    while True:  
-          print(f"Select a Column Number between 1 and {board_size} included")
-          column_num_plr = int(input()) - 1
-          if validate_integer_grid(column_num_plr, board_size):
+          while True:
+                print(f"Select a Column Number between 1 and {board_size} included")
+                column_num_plr = int(input()) - 1
+                if validate_integer_grid(column_num_plr, board_size):
+                      break
+          
+          selection = row_num_plr, column_num_plr
+          if validate_selection_already_used(selection, guessed_shot):
                 break
-    
+                       
     return row_num_plr, column_num_plr
     
 def call_shot_computer(board_size):
@@ -236,7 +257,11 @@ def new_game():
     player_selection = call_shot_player(board_size)
     computer_selection = call_shot_computer(board_size)
     
-    print(player_selection)
+    print(guessed_shot)  # To be removed, it tests the code   
+    guessed_shot.add(player_selection) # To be removed, it tests the code
+    
+    print(player_selection) # To be removed, it tests the code
     print(computer_selection) # To be removed, it tests the code
+    print(guessed_shot) # To be removed, it tests the code
 
 new_game()
