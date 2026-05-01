@@ -16,7 +16,7 @@ class Board:
       """
       def __init__(self, board_size, num_ships, player_name, type):
             self.board_size = board_size
-            self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)]
+            self.board = [] # the board is an empty list
             self.num_ships = num_ships
             self.player_name = player_name
             self.type = type
@@ -41,16 +41,15 @@ class Board:
             on the board for the computer.
             """
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
-            computer_board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
+            self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
-                  computer_board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
+                  self.board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
 
             self.display_board_info("Computer")                       
-            self.board = computer_board
-            computer_board = self.format_display_board()
+            self.format_display_board()
                                     
-            return computer_board
+            return self.board
          
       def initial_display_board_plr(self):
             """
@@ -58,16 +57,15 @@ class Board:
             on the board for the player.
             """
             initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
-            player_board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
+            self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
-                  player_board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
+                  self.board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
             
             self.display_board_info("Player")      
-            self.board = player_board
-            player_board = self.format_display_board()        
+            self.format_display_board()        
                         
-            return player_board
+            return self.board
 
       def display_board_info(self, player_type):
             """
@@ -175,7 +173,7 @@ def validate_integer_grid(value, board_size):
     
     return True
 
-def validate_selection_already_used(selection, guessed_shot):
+def validate_guess_already_used(selection, guessed_shot):
     """
     The function raises a ValueError if the selection has already
     been used.
@@ -209,7 +207,7 @@ def call_shot_player(board_size):
                       break
           
           selection = row_num_plr, column_num_plr
-          if validate_selection_already_used(selection, guessed_shot):
+          if validate_guess_already_used(selection, guessed_shot):
                 break
                        
     return row_num_plr, column_num_plr
