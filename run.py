@@ -263,6 +263,7 @@ def right_guess_or_not_cpt(value):
     
     if value in player_initial_selection:
         scores["computer"] = +1
+        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation. Second change.
         return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
