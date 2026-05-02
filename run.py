@@ -2,10 +2,10 @@ import random
 import time
 
 scores = {"computer": 0, "player": 0}
-guessed_shot_player = set()
-guessed_shot_computer = set()
-player_initial_selection = set()
-computer_initial_selection = set()
+guessed_shot_player = set() # set that contains the guesses made by the player
+guessed_shot_computer = set() # set that contains the guesses made by the computer
+player_initial_selection = set() # set that contains the ships coordinates for the player
+computer_initial_selection = set() # set that contains the ships coordinates for the computer
 
 def random_integer(value):
     """
@@ -19,10 +19,10 @@ class Board:
       """
       def __init__(self, board_size, num_ships, player_name, type):
             self.board_size = board_size
-            self.board = [] # the board is an empty list
             self.num_ships = num_ships
             self.player_name = player_name
             self.type = type
+            self.board = [] # the board is an empty list
             self.delim_display = ""
 
       def format_display_board(self):
