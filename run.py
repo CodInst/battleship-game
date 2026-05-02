@@ -33,11 +33,10 @@ class Board:
             The method will create a initial random placement of ships on
             the board for the player and the computer.
             """
-            initial_board_row = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the rows in a list
-            initial_board_column = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the columns in a list
-            initial_board = list(zip(initial_board_row, initial_board_column))
-
-            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
+            # Generate unique random numbers for the rows in a list
+            # Generate unique random numbers for the columns in a list
+            # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
+            return  list(zip(random.sample(range(0, self.board_size), self.num_ships), random.sample(range(0, self.board_size), self.num_ships))) 
               
       def initial_display_board_cpt(self):
             """
@@ -310,7 +309,7 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    test = board.initial_display_board_cpt() # To be removed, it tests the code
+    board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
     print()
     player_guess = call_shot_player(board_size)
