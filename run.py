@@ -33,10 +33,11 @@ class Board:
             The method will create a initial random placement of ships on
             the board for the player and the computer.
             """
-            # Generate unique random numbers for the rows in a list
-            # Generate unique random numbers for the columns in a list
-            # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
-            return  list(zip(random.sample(range(0, self.board_size), self.num_ships), random.sample(range(0, self.board_size), self.num_ships))) 
+            initial_board_row = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the rows in a list
+            initial_board_column = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the columns in a list
+            initial_board = list(zip(initial_board_row, initial_board_column))
+
+            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
               
       def initial_display_board_cpt(self):
             """
@@ -140,26 +141,27 @@ def validate_input_ships(value):
         return True
 
 def initial_input_player():
-     """
-    The function allowes the input of:
-    the player's name, size of the board and number of ships. 
-    """
-     while True:
-           player_name = input("Please enter your name:\n").capitalize()
-           if initial_validate_input_player_name(player_name):
-                 break
+      """
+      The function allowes the input of:
+      the player's name, size of the board and number of ships. 
+      """  
+      while True:
+            player_name = input("Please enter your name:\n").capitalize()
+            if initial_validate_input_player_name(player_name):
+                  break
 
-     while True:
-           board_size = input("Select a board size: 6 or 7\n")
-           if validate_input_board(board_size):
-                 break    
+      while True:
+            board_size = input("Select a board size: 6 or 7\n")
+            if validate_input_board(board_size):
+                  break    
 
-     while True:
-           num_ships = input("Select a number of ships: 4,5 or 6\n")
-           if validate_input_ships(num_ships):
-                 break
+      while True:
+            num_ships = input("Select a number of ships: 4,5 or 6\n")
+            if validate_input_ships(num_ships):
+                  break
+     
            
-     return player_name , int(board_size), int(num_ships)
+      return player_name , int(board_size), int(num_ships)
 
 def validate_integer_grid(value, board_size):
     """
@@ -239,11 +241,12 @@ def call_shot_computer(board_size):
 
 def right_guess_or_not_plr(value):
     """
-    The function checks the guesses made by the player.
+    The function checks the guesses made by the player,
+    against the computer board.
     """
-    global player_initial_selection, scores
+    global computer_initial_selection, scores
     
-    if value in player_initial_selection:
+    if value in computer_initial_selection:
         scores["player"] = +1
         return print(f"You sank an enemy ship at {value}.")
     else:
@@ -251,17 +254,18 @@ def right_guess_or_not_plr(value):
 
 def right_guess_or_not_cpt(value):
     """
-    The function checks the guesses made by the computer.
+    The function checks the guesses made by the computer,
+    against the player board.
     """
-    global computer_initial_selection, scores
+    global player_initial_selection, scores
     
-    if value in computer_initial_selection:
+    if value in player_initial_selection:
         scores["computer"] = +1
         return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
         
-def display_score():
+def display_score(player_name):
       """
       The function displays score at each iteration i.e after each
       computer and player guesses.
@@ -269,9 +273,9 @@ def display_score():
       global computer_initial_selection, scores
       
       print("Score")
-      print('=' * 24)
-      print(f"Computer: {scores['computer']} | Player: {scores['player']}")
-      print('=' * 24)
+      print('=' * 35)
+      print(f"Computer: {scores['computer']} | {player_name}: {scores['player']}")
+      print('=' * 35)
     
 def game_exit(num_ships):
       """
@@ -329,7 +333,7 @@ def new_game():
     right_guess_or_not_plr(player_guess)
     right_guess_or_not_cpt(computer_guess)
     print()
-    display_score()
+    display_score(player_name)
     print()
     game_exit(num_ships)
     
