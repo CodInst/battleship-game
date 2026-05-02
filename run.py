@@ -270,9 +270,9 @@ def display_score():
       global computer_initial_selection, scores
       
       print("Score")
-      print('=' * 35)
-      print(f"Computer: {scores['computer']} - Player: {scores['player']}")
-      print('=' * 35)
+      print('=' * 24)
+      print(f"Computer: {scores['computer']} | Player: {scores['player']}")
+      print('=' * 24)
     
 def game_exit(num_ships):
       """
@@ -310,8 +310,7 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.initial_display_board_cpt() # To be removed, it tests the code
-    print()
+    test = board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
     print()
     player_guess = call_shot_player(board_size)
