@@ -251,7 +251,7 @@ def right_guess_or_not_plr(value):
     else:
         return print("You missed, better luck next time")
 
-def right_guess_or_not_cpt(value):
+def right_guess_or_not_cpt(value): 
     """
     The function checks the guesses made by the computer,
     against the player board.
@@ -314,20 +314,30 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
+    board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
+    print()
     
-    while True:
-          print()
-          player_guess = call_shot_player(board_size) # Guess value from the player
-          computer_guess = call_shot_computer(board_size) # Guess value from the computer
-          guessed_shot_player.add(player_guess) # Guess value from the player added to a global variable
-          guessed_shot_computer.add(computer_guess) # Guess value from the computer added to a global variable
-          print()
-          right_guess_or_not_plr(player_guess)
-          right_guess_or_not_cpt(computer_guess)
-          print()
-          display_score(player_name)
-          if game_exit(num_ships):
-                break
+    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
+    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
+    player_guess = call_shot_player(board_size)
+    computer_guess = call_shot_computer(board_size)
+    
+    guessed_shot_player.add(player_guess) # To be removed, it tests the code
+    guessed_shot_computer.add(computer_guess) # To be removed, it tests the code
+    
+    print(player_guess) # To be removed, it tests the code
+    print(computer_guess) # To be removed, it tests the code
+    print(guessed_shot_player) # To be removed, it tests the code
+    print(guessed_shot_computer) # To be removed, it tests the code
+    print()
+
+    print()
+    right_guess_or_not_plr(player_guess)
+    right_guess_or_not_cpt(computer_guess)
+    print()
+    display_score(player_name)
+    print()
+    game_exit(num_ships)
     
 new_game()
