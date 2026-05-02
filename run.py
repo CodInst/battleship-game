@@ -170,7 +170,7 @@ def validate_integer_grid(value, board_size):
     """
     try:
         int(value)
-        if int(value) not in range(0, board_size):
+        if int(value) not in range(1, board_size+1):
             raise ValueError
       
     except ValueError:
@@ -204,21 +204,21 @@ def call_shot_player(board_size):
     while True:
           while True:
                 print(f"Select a Row Number between 1 and {board_size} included")
-                row_num_plr = int(input()) - 1
-                if validate_integer_grid(row_num_plr, board_size): # Check if the row is an integer
+                row_num_plr = input()
+                if validate_integer_grid(row_num_plr, board_size): # Check if the row is an integer.
                       break
           
           while True:
                 print(f"Select a Column Number between 1 and {board_size} included")
-                column_num_plr = int(input()) - 1
-                if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer
+                column_num_plr = input()
+                if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer.
                       break
           
-          selection = row_num_plr, column_num_plr
-          if validate_guess_already_used(selection, guessed_shot_player): # Check if the selection has been already used
+          selection = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column.
+          if validate_guess_already_used(selection, guessed_shot_player): # Check if the selection has been already used.
                 break
                        
-    return row_num_plr, column_num_plr
+    return selection
     
 def call_shot_computer(board_size):
     """
@@ -228,9 +228,7 @@ def call_shot_computer(board_size):
     global guessed_shot_computer
     
     while True:
-          print("Row Selction from computer ")
           row_num_cpt = random_integer(board_size)
-          print("Column Selction from computer")
           column_num_cpt = random_integer(board_size)
           selection = row_num_cpt, column_num_cpt
           
@@ -245,8 +243,7 @@ def right_guess_or_not_plr(value):
     against the computer board.
     """
     global computer_initial_selection, scores
-    
-    print(value)
+        
     if value in computer_initial_selection:
         scores["player"] = +1
         value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation
@@ -296,7 +293,7 @@ def game_exit(num_ships):
 def new_game():
     """
     The function starts a new game. It gives an introductory text.
-    It runs all function of the program.
+    It also runs all function of the program.
     """
     print(
         """
@@ -317,30 +314,20 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
-    print()
     
-    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
-    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
-    player_guess = call_shot_player(board_size)
-    computer_guess = call_shot_computer(board_size)
-    
-    guessed_shot_player.add(player_guess) # To be removed, it tests the code
-    guessed_shot_computer.add(computer_guess) # To be removed, it tests the code
-    
-    print(player_guess) # To be removed, it tests the code
-    print(computer_guess) # To be removed, it tests the code
-    print(guessed_shot_player) # To be removed, it tests the code
-    print(guessed_shot_computer) # To be removed, it tests the code
-    print()
-
-    print()
-    right_guess_or_not_plr(player_guess)
-    right_guess_or_not_cpt(computer_guess)
-    print()
-    display_score(player_name)
-    print()
-    game_exit(num_ships)
+    while True:
+          print()
+          player_guess = call_shot_player(board_size) # Guess value from the player
+          computer_guess = call_shot_computer(board_size) # Guess value from the computer
+          guessed_shot_player.add(player_guess) # Guess value from the player added to a global variable
+          guessed_shot_computer.add(computer_guess) # Guess value from the computer added to a global variable
+          print()
+          right_guess_or_not_plr(player_guess)
+          right_guess_or_not_cpt(computer_guess)
+          print()
+          display_score(player_name)
+          if game_exit(num_ships):
+                break
     
 new_game()
