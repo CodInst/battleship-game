@@ -238,27 +238,27 @@ def call_shot_computer(board_size):
 
     return row_num_cpt, column_num_cpt
 
-def right_guess_or_not_plr(selection):
+def right_guess_or_not_plr(value):
     """
     The function checks the guesses made by the player.
     """
     global player_initial_selection, scores
     
-    if selection in player_initial_selection:
+    if value in player_initial_selection:
         scores["player"] = +1
-        return print("You sank an enemy ship")
+        return print("You sank an enemy ship" at {value})
     else:
         return print("You missed, better luck next time")
 
-def right_guess_or_not_cpt(selection):
+def right_guess_or_not_cpt(value):
     """
     The function checks the guesses made by the computer.
     """
     global computer_initial_selection, scores
     
-    if selection in computer_initial_selection:
+    if value in computer_initial_selection:
         scores["computer"] = +1
-        return print(f"Your ship at {selection} has been sunk")
+        return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
         
@@ -307,6 +307,5 @@ def new_game():
     right_guess_or_not_plr(player_guess)
     right_guess_or_not_cpt(computer_guess)
     
-    
-    
+      
 new_game()
