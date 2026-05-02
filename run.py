@@ -246,10 +246,10 @@ def right_guess_or_not_plr(value):
     """
     global computer_initial_selection, scores
     
+    print(value)
     if value in computer_initial_selection:
         scores["player"] = +1
-        # value[0] += 1 The value is the visual representation not the 0 indexation
-        # value[1] += 1 The value is the visual representation not the 0 indexation      
+        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation
         return print(f"You sank an enemy ship at {value}.")
     else:
         return print("You missed, better luck next time")
@@ -263,8 +263,6 @@ def right_guess_or_not_cpt(value):
     
     if value in player_initial_selection:
         scores["computer"] = +1
-        # value[0] += 1 The value is the visual representation not the 0 indexation
-        # value[1] += 1 The value is the visual representation not the 0 indexation
         return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
