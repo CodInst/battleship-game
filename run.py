@@ -204,17 +204,17 @@ def call_shot_player(board_size):
           while True:
                 print(f"Select a Row Number between 1 and {board_size} included")
                 row_num_plr = int(input()) - 1
-                if validate_integer_grid(row_num_plr, board_size):
+                if validate_integer_grid(row_num_plr, board_size): # Check if the row is an integer
                       break
           
           while True:
                 print(f"Select a Column Number between 1 and {board_size} included")
                 column_num_plr = int(input()) - 1
-                if validate_integer_grid(column_num_plr, board_size):
+                if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer
                       break
           
           selection = row_num_plr, column_num_plr
-          if validate_guess_already_used(selection, guessed_shot_player):
+          if validate_guess_already_used(selection, guessed_shot_player): # Check if the selection has been already used
                 break
                        
     return row_num_plr, column_num_plr
