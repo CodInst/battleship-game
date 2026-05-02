@@ -23,6 +23,7 @@ class Board:
             self.num_ships = num_ships
             self.player_name = player_name
             self.type = type
+            self.delim_display = ""
 
       def format_display_board(self):
           return [print("   ".join(row)) for row in self.board]
@@ -82,19 +83,18 @@ class Board:
             """
             self.player_type = player_type
             if self.board_size == 5:
-                  delim_display = ('=' * 17)
+                  self.delim_display = ('=' * 17)
             elif self.board_size == 6:
-                  delim_display = ('=' * 21)  
+                  self.delim_display = ('=' * 21)  
             else:
-                  delim_display = ('=' * 25)
+                  self.delim_display = ('=' * 25)
             
-            print(delim_display)
+            print(self.delim_display)
             if self.player_type == "Computer":
                   print("Computer Board")           
             else:
                   print("Player Board")
-            print(delim_display)            
-                          
+            print(self.delim_display)                                    
 
 def initial_validate_input_player_name(value):
         """
@@ -112,7 +112,6 @@ def initial_validate_input_player_name(value):
         
         return True
 
-
 def validate_input_board(value):
         """
         The function raises a ValueError if board Size is not 5,6 or7.
@@ -127,7 +126,6 @@ def validate_input_board(value):
     
         return True
 
-
 def validate_input_ships(value):
         """
         The function raises a ValueError if A number of Ships is not 4,5 or 6.
@@ -141,7 +139,6 @@ def validate_input_ships(value):
               return False  
     
         return True
-
 
 def initial_input_player():
      """
