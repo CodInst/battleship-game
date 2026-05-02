@@ -170,7 +170,7 @@ def validate_integer_grid(value, board_size):
     """
     try:
         int(value)
-        if int(value) not in range(1, board_size):
+        if int(value) not in range(0, board_size):
             raise ValueError
       
     except ValueError:
