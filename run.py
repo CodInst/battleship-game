@@ -246,7 +246,7 @@ def right_guess_or_not_plr(value):
     
     if value in player_initial_selection:
         scores["player"] = +1
-        return print("You sank an enemy ship" at {value})
+        return print(f"You sank an enemy ship at {value}.")
     else:
         return print("You missed, better luck next time")
 
@@ -262,6 +262,29 @@ def right_guess_or_not_cpt(value):
     else:
         return print("The computer failed to sink any of your ships")
         
+def display_score():
+      """
+      The function displays score at each iteration i.e after each
+      computer and player guesses.
+      """
+      global computer_initial_selection, scores
+      
+      print("Score")
+      print('=' * 35)
+      print(f"Computer: {scores['computer']} - Player: {scores['player']}")
+      print('=' * 35)
+    
+def game_exit(num_ships):
+      """
+      The function manages the scenarios when the game ends.
+      """
+      global guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
+            
+      if len(guessed_shot_player&player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer&computer_initial_selection) == (num_ships ** 2):
+            print(f"The game has ended. The final score is {scores}.")
+            return False
+
+      return True
 
 def new_game():
     """
@@ -301,11 +324,15 @@ def new_game():
     print(computer_guess) # To be removed, it tests the code
     print(guessed_shot_player) # To be removed, it tests the code
     print(guessed_shot_computer) # To be removed, it tests the code
+    print()
     print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
     print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
-    
+    print()
     right_guess_or_not_plr(player_guess)
     right_guess_or_not_cpt(computer_guess)
+    print()
+    display_score()
+    print()
+    game_exit(num_ships)
     
-      
 new_game()
