@@ -50,7 +50,7 @@ class Board:
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
-                  self.board[initial_placement_computer[tple][1]][initial_placement_computer[tple][0]] = "X"  # it places the ships on the board
+                  self.board[initial_placement_computer[tple][0]][initial_placement_computer[tple][1]] = "X"  # it places the ships on the board
             
             self.display_board_info("Computer")                       
             self.format_display_board()
@@ -69,7 +69,7 @@ class Board:
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
-                  self.board[initial_placement_player[tple][1]][initial_placement_player[tple][0]] = "X"  # it places the ships on the board
+                  self.board[initial_placement_player[tple][0]][initial_placement_player[tple][1]] = "X"  # it places the ships on the board
             
             self.display_board_info("Player")      
             self.format_display_board()        
@@ -248,8 +248,8 @@ def right_guess_or_not_plr(value):
     
     if value in computer_initial_selection:
         scores["player"] = +1
-        value[0] += 1 # The value is the visual representation not the 0 indexation
-        value[1] += 1 # The value is the visual representation not the 0 indexation      
+        # value[0] += 1 The value is the visual representation not the 0 indexation
+        # value[1] += 1 The value is the visual representation not the 0 indexation      
         return print(f"You sank an enemy ship at {value}.")
     else:
         return print("You missed, better luck next time")
@@ -263,8 +263,8 @@ def right_guess_or_not_cpt(value):
     
     if value in player_initial_selection:
         scores["computer"] = +1
-        value[0] += 1 # The value is the visual representation not the 0 indexation
-        value[1] += 1 # The value is the visual representation not the 0 indexation
+        # value[0] += 1 The value is the visual representation not the 0 indexation
+        # value[1] += 1 The value is the visual representation not the 0 indexation
         return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
@@ -303,7 +303,7 @@ def new_game():
         """
         +======================================+
         | Welcome to ULTIMATE BATTLESHIPS!!    |
-        | Top left corner is row: 0, col:0     |
+        | Top left corner is row: 1, col: 1    |
         | Select a number for:                 |
         |     -the board Size: 6 or 7          |
         |     -the number of Ships: 4,5 or 6   |
@@ -321,6 +321,9 @@ def new_game():
     board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
     print()
+    
+    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
+    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
     player_guess = call_shot_player(board_size)
     computer_guess = call_shot_computer(board_size)
     
@@ -332,8 +335,7 @@ def new_game():
     print(guessed_shot_player) # To be removed, it tests the code
     print(guessed_shot_computer) # To be removed, it tests the code
     print()
-    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
-    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
+
     print()
     right_guess_or_not_plr(player_guess)
     right_guess_or_not_cpt(computer_guess)
