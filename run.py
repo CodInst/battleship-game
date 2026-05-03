@@ -346,7 +346,7 @@ def new_game():
           display_score(player_name)
           print()
           
-          if game_exit(num_ships):
+          if game_exit(board_size, num_ships):
                 break
     
 new_game()
