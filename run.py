@@ -330,27 +330,27 @@ def new_game():
     print('=' * 35)
     print()
     board.initial_display_board_plr()
+    print()
     while True:
           print()
-          player_guess, player_guess1 = call_shot_player(board_size)
+          player_guess_0, player_guess_1 = call_shot_player(board_size)
           computer_guess = call_shot_computer(board_size)
-          guessed_shot_player.add(player_guess)
+          guessed_shot_player.add(player_guess_0)
           guessed_shot_computer.add(computer_guess)
           print(guessed_shot_player) # to be removed - for testing purpose only.
           print(guessed_shot_computer) # to be removed - for testing purpose only.
           print()          
           print("Outcome:")
           print('=' * 35)
-          right_guess_or_not_plr(player_guess) # Check the guess made by the player is correct
+          right_guess_or_not_plr(player_guess_0) # Check the guess made by the player is correct
           right_guess_or_not_cpt(computer_guess) # Check the guess made by the computer is correct
           print('=' * 35)
           print()
           display_score(player_name)
-          print("You selected the rows (R) and columns (C) - (R,C):", player_guess1) # Selection made the player
-          print("Your ships are located at the coordinates - (R,C):", player_initial_selection) # Coordinates of the ships
+          print("You selected Rows and Columns (R,C):", player_guess_1) # Selection made the player
           print('=' * 35)
           print()
-          
+
           if game_exit(board_size, num_ships):
                 break
     
