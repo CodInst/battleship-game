@@ -289,6 +289,7 @@ def game_exit(num_ships):
             return True
 
       print(guessed_shot_player|player_initial_selection) # to be removed - for testing purpose only.
+      print(len(guessed_shot_player|player_initial_selection)) # to be removed - for testing purpose only.
       return False
 
 def new_game():
