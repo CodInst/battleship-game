@@ -283,11 +283,12 @@ def game_exit(num_ships):
       """
       global guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
             
-      if len(guessed_shot_player&player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer&computer_initial_selection) == (num_ships ** 2):
+      if len(guessed_shot_player|player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer|computer_initial_selection) == (num_ships ** 2):
             # The condition to end game is to cover the all grid 36 selections for a 6-size board and 49 for for a 7-size
             print(f"The game has ended. The final score is {scores}.")
             return True
 
+      print(guessed_shot_player|player_initial_selection) # to be removed - for testing purpose only.
       return False
 
 def new_game():
