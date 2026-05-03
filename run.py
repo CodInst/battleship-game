@@ -308,6 +308,7 @@ def new_game():
     The function starts a new game. It gives an introductory text.
     It also runs all function of the program.
     """
+    global scores, guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection 
     print(
         """
         +======================================+
@@ -339,11 +340,14 @@ def new_game():
           print()          
           print("Outcome:")
           print('=' * 35)
-          right_guess_or_not_plr(player_guess)
-          right_guess_or_not_cpt(computer_guess)
+          right_guess_or_not_plr(player_guess) # Check the guess made by the player is correct
+          right_guess_or_not_cpt(computer_guess) # Check the guess made by the computer is correct
           print('=' * 35)
           print()
           display_score(player_name)
+          print("You selected the following rows(R) and columns(C) - (R,C):", guessed_shot_player)
+          print("Your ships are located at the coordinates:", player_initial_selection)
+          print('=' * 35)
           print()
           
           if game_exit(board_size, num_ships):
