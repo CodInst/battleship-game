@@ -214,11 +214,12 @@ def call_shot_player(board_size):
                 if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer.
                       break
           
-          selection = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column.
-          if validate_guess_already_used(selection, guessed_shot_player): # Check if the selection has been already used.
+          selection_0 = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column based on 0-indexing.
+          selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 0-indexing.
+          if validate_guess_already_used(selection_0, guessed_shot_player): # Check if the selection has been already used.
                 break
                        
-    return selection
+    return selection_0, selection_1
     
 def call_shot_computer(board_size):
     """
@@ -331,7 +332,7 @@ def new_game():
     board.initial_display_board_plr()
     while True:
           print()
-          player_guess = call_shot_player(board_size)
+          player_guess, player_guess1 = call_shot_player(board_size)
           computer_guess = call_shot_computer(board_size)
           guessed_shot_player.add(player_guess)
           guessed_shot_computer.add(computer_guess)
@@ -345,8 +346,8 @@ def new_game():
           print('=' * 35)
           print()
           display_score(player_name)
-          print("You selected the following rows(R) and columns(C) - (R,C):", guessed_shot_player)
-          print("Your ships are located at the coordinates:", player_initial_selection)
+          print("You selected the rows (R) and columns (C) - (R,C):", player_guess1) # Selection made the player
+          print("Your ships are located at the coordinates - (R,C):", player_initial_selection) # Coordinates of the ships
           print('=' * 35)
           print()
           
