@@ -127,18 +127,18 @@ def validate_input_board(value):
         return True
 
 def validate_input_ships(value):
-        """
-        The function raises a ValueError if A number of Ships is not 4,5 or 6.
-        """
-        try:
-              int(value)
-              if int(value) not in [4,5,6]:
+      """
+      The function raises a ValueError if A number of Ships is not 4,5 or 6.
+      """
+      try:
+            int(value)
+            if int(value) not in [4,5,6]:
                     raise ValueError
-        except ValueError:
-              print(f"Error: the number of ships is 4,5 or 6, you provided {value}, please try again.\n")
-              return False  
+      except ValueError:
+            print(f"Error: the number of ships is 4,5 or 6, you provided {value}, please try again.\n")
+            return False  
     
-        return True
+      return True
 
 def initial_input_player():
       """
@@ -189,7 +189,7 @@ def validate_guess_already_used(selection, guessed_shot):
                 raise ValueError
 
     except ValueError:
-          print(f"You have already used these numbers Row: {selection[0]} and Column: {selection[1]}. ")
+          print(f"You have already used these numbers Row: {selection[0] + 1} and Column: {selection[1] + 1}. ")
           return False  
     
     return True
@@ -284,11 +284,11 @@ def game_exit(num_ships):
       global guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
             
       if len(guessed_shot_player&player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer&computer_initial_selection) == (num_ships ** 2):
-            # The condition to end game is to cover the all grid 36 slections for a 6-size board and 49 for for a 7-size
+            # The condition to end game is to cover the all grid 36 selections for a 6-size board and 49 for for a 7-size
             print(f"The game has ended. The final score is {scores}.")
-            return False
+            return True
 
-      return True
+      return False
 
 def new_game():
     """
@@ -314,30 +314,26 @@ def new_game():
     print(f"Each player will have {num_ships} battleships")
     print('=' * 35)
     print()
-    board.initial_display_board_cpt() # To be removed, it tests the code
     board.initial_display_board_plr()
-    print()
-    
-    print("player_initial_selection:", player_initial_selection) # To be removed, it tests the code
-    print("computer_initial_selection:", computer_initial_selection) # To be removed, it tests the code
-    player_guess = call_shot_player(board_size)
-    computer_guess = call_shot_computer(board_size)
-    
-    guessed_shot_player.add(player_guess) # To be removed, it tests the code
-    guessed_shot_computer.add(computer_guess) # To be removed, it tests the code
-    
-    print(player_guess) # To be removed, it tests the code
-    print(computer_guess) # To be removed, it tests the code
-    print(guessed_shot_player) # To be removed, it tests the code
-    print(guessed_shot_computer) # To be removed, it tests the code
-    print()
-
-    print()
-    right_guess_or_not_plr(player_guess)
-    right_guess_or_not_cpt(computer_guess)
-    print()
-    display_score(player_name)
-    print()
-    game_exit(num_ships)
+    while True:
+          print()
+          player_guess = call_shot_player(board_size)
+          computer_guess = call_shot_computer(board_size)
+          guessed_shot_player.add(player_guess)
+          guessed_shot_computer.add(computer_guess)
+          print(guessed_shot_player)
+          print(guessed_shot_computer)
+          print()          
+          print("Outcome:")
+          print('=' * 35)
+          right_guess_or_not_plr(player_guess)
+          right_guess_or_not_cpt(computer_guess)
+          print('=' * 35)
+          print()
+          display_score(player_name)
+          print()
+          
+          if game_exit(num_ships):
+                break
     
 new_game()
