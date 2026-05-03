@@ -322,8 +322,8 @@ def new_game():
           computer_guess = call_shot_computer(board_size)
           guessed_shot_player.add(player_guess)
           guessed_shot_computer.add(computer_guess)
-          print(guessed_shot_player)
-          print(guessed_shot_computer)
+          print(guessed_shot_player) # to be removed - for testing purpose only.
+          print(guessed_shot_computer) # to be removed - for testing purpose only.
           print()          
           print("Outcome:")
           print('=' * 35)
