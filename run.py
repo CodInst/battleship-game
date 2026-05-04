@@ -323,15 +323,16 @@ def new_game():
     player_name, board_size, num_ships = initial_input_player()
     board = Board(board_size, num_ships, player_name, "X")
     print()
-    print('=' * 35)
+    print('=' * 41)
     print(f"WELCOME TO THE GAME, {player_name}")
     print(f"You selected a board size of {board_size}")
     print(f"Each player will have {num_ships} battleships")
-    print('=' * 35)
+    print(f"Each battleship is marked with an 'X' on the board")
+    print('=' * 41)
     print()
     board.initial_display_board_plr()
     board.initial_display_board_cpt()
-    guessed_shot_player_1 = [] # Guess List made by the player based on 1-indexing
+    guessed_shot_player_1 = [] # List of Guesses made by the player based on 1-indexing
     while True:
           print()
           player_guess_0, player_guess_1 = call_shot_player(board_size)
