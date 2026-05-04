@@ -26,11 +26,14 @@ class Board:
             self.delim_display = ""
 
       def format_display_board(self):
-          return [print("   ".join(row)) for row in self.board]
+            """
+            The method format the display of the board.
+            """
+            return [print("   ".join(row)) for row in self.board]
       
       def initial_placement_ships(self):
             """
-            The method will create a initial random placement of ships on
+            The method creates a initial random placement of ships on
             the board for the player and the computer.
             """
             initial_board_row = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the rows in a list
@@ -57,7 +60,7 @@ class Board:
          
       def initial_display_board_plr(self):
             """
-            The method will place the random generated ships placement
+            The method places the random generated ships placement
             on the board for the player.
             """
             global player_initial_selection
