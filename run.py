@@ -158,8 +158,7 @@ def initial_input_player():
             num_ships = input("Select a number of ships: 4,5 or 6\n")
             if validate_input_ships(num_ships):
                   break
-     
-           
+       
       return player_name , int(board_size), int(num_ships)
 
 def validate_integer_grid(value, board_size):
@@ -173,7 +172,7 @@ def validate_integer_grid(value, board_size):
             raise ValueError
       
     except ValueError:
-          print(f"The number is not an integer or within the range of 1 to {board_size} ")
+          print(f"Error: The value you entered is not an integer or within the range of 1 to {board_size} ")
           return False
     
     return True
@@ -301,7 +300,6 @@ def game_exit(board_size, num_ships):
             return True
        
       return False
-
 
 def new_game():
     """
