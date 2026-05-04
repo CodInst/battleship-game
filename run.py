@@ -1,5 +1,4 @@
 import random
-import time
 
 scores = {"computer": 0, "player": 0}
 guessed_shot_player_0 = set() # set that contains the guesses made by the player
