@@ -1,21 +1,21 @@
 # Ultimate BattleShips - Table of Contents
 
 1. <a>[About](#about)</a>
-1. <a>[Termminology](#terminology)</a>
-2. <a>[Live Project](#live-project)</a>
-3. <a>[Deployment](#deployment)</a>
-4. <a>[Design Draft](#design-draft)</a>
-5. <a>[Design Final](#design-final)</a>
-6. <a>[Colours](#colours)</a>
-8. <a>[Fonts](#fonts)</a>
-7. <a>[Features](#features)</a>
-8. <a>[Codes](#codes)</a>
-9. <a>[Testing](#testing)</a>
+2. <a>[Termminology](#terminology)</a>
+3. <a>[Live Project](#live-project)</a>
+X. <a>[Deployment](#deployment)</a>
+X. <a>[Design Draft](#design-draft)</a>
+X. <a>[Design Final](#design-final)</a>
+X. <a>[Colours](#colours)</a>
+X. <a>[Fonts](#fonts)</a>
+X. <a>[Features](#features)</a>
+X. <a>[Codes](#codes)</a>
+X. <a>[Testing](#testing)</a>
       - <a>[Testing with W3C CSS](#testing-with-w3c-css)</a>
       - <a>[Testing with W3C HTML](#testing-with-w3c-html)</a>
       - <a>[Testing with Chrome Lighthouse](#testing-with-chrome-lighthouse)</a>
-10. <a>[Project Revision and Manual Testing](#project-revision-and-manual-testing)</a>
-11. <a>[Credits](#credits)</a>
+X. <a>[Project Revision and Manual Testing](#project-revision-and-manual-testing)</a>
+x. <a>[Credits](#credits)</a>
 
 # About
 
