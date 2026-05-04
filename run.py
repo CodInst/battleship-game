@@ -14,7 +14,9 @@ def random_integer(value):
 
 class Board:
       """
-      Description of the class
+      The class Board takes in, the size of the board, the number
+      of ships, the player's name. Methods to generate random,
+      placements for the ships and place it in the board.
       """
       def __init__(self, board_size, num_ships, player_name):
             self.board_size = board_size
