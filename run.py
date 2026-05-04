@@ -285,25 +285,21 @@ def game_exit(num_ships):
       """
       global guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
             
-      if len(guessed_shot_player_0|player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer|computer_initial_selection) == (num_ships ** 2):
-            # The condition to end game is to cover the all grid 36 selections for a 6-size board and 49 for for a 7-size
+      if ((len(guessed_shot_player_0) + len(player_initial_selection)) == (num_ships ** 2)) or ((len(guessed_shot_computer) + len(computer_initial_selection)) == (num_ships ** 2)):
+            # The condition to end the game is to cover the all grid i.e. 36 selections for a 6-size board and 49 for for a 7-size.
             print(f"The game has ended. You covered the all grid. The final score is {scores}.")
             return True
-      elif len((guessed_shot_player_0&player_initial_selection)) == num_ships:         
-            # The condition to end game is that the player makes the right guesses
-            print(f"The game has ended. You sank all the computer's battleships. The final score is {scores}.")
-            return True
-      elif len((guessed_shot_computer&computer_initial_selection)) == num_ships:       
-            # The condition to end game is that the computer makes the right guesses
+      elif (scores['computer'] == 6):       
+            # The condition to end the game is when the score reaches 6 for the computer.
             print(f"The game has ended. The computer sank all your battleships. The final score is {scores}.")
             return True
+      elif (scores['player'] == 6):       
+            # The condition to end the game is when the score reaches 6 for the player.
+            print(f"The game has ended. You sank all computer's battleships. The final score is {scores}.")
+            return True
 
-      print("condition 1 player:", guessed_shot_player_0|player_initial_selection) # to be removed - for testing purpose only.
-      print(len(guessed_shot_player_0|player_initial_selection)) # to be removed - for testing purpose only.
-      print("condition 1 computer:", guessed_shot_computer|computer_initial_selection) # to be removed - for testing purpose only.
-      print(len(guessed_shot_computer|computer_initial_selection)) # to be removed - for testing purpose only.
-      print("condition 2:", guessed_shot_player_0&player_initial_selection) # to be removed - for testing purpose only.
-      print("condition 3:", guessed_shot_computer&computer_initial_selection) # to be removed - for testing purpose only. 
+      print(len(guessed_shot_player_0) + len(player_initial_selection)) # to be removed - for testing purpose only.
+      print(len(guessed_shot_computer) + len(computer_initial_selection)) # to be removed - for testing purpose only.
           
       return False
 
@@ -337,7 +333,6 @@ def new_game():
     print()
     board.initial_display_board_plr()
     board.initial_display_board_cpt()
-    print()
     guessed_shot_player_1 = []
     while True:
           print()
