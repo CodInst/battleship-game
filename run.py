@@ -17,11 +17,10 @@ class Board:
       """
       Description of the class
       """
-      def __init__(self, board_size, num_ships, player_name, type):
+      def __init__(self, board_size, num_ships, player_name):
             self.board_size = board_size
             self.num_ships = num_ships
             self.player_name = player_name
-            self.type = type
             self.board = [] # the board is an empty list
             self.delim_display = ""
 
@@ -321,7 +320,7 @@ def new_game():
         """)
     
     player_name, board_size, num_ships = initial_input_player()
-    board = Board(board_size, num_ships, player_name, "X")
+    board = Board(board_size, num_ships, player_name)
     print()
     print('=' * 41)
     print(f"WELCOME TO THE GAME, {player_name}")
