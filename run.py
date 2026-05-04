@@ -196,7 +196,7 @@ def validate_guess_already_used(selection, guessed_shot):
 def call_shot_player(board_size):
     """
     The function allows the player to make guess by
-    inputing a row and a column.
+    putting-in a row and a column.
     """
     global guessed_shot_player_0
     
