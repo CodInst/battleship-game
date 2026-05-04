@@ -301,10 +301,7 @@ def game_exit(board_size, num_ships):
             print(f"The game has ended.\nYou sank all computer's battleships.\nThe final score is:\n{scores}.")
             print('=' * 35)
             return True
-
-      print(len(guessed_shot_player_0) + len(player_initial_selection)) # to be removed - for testing purpose only.
-      print(len(guessed_shot_computer) + len(computer_initial_selection)) # to be removed - for testing purpose only.
-          
+       
       return False
 
 
@@ -337,18 +334,14 @@ def new_game():
     print()
     board.initial_display_board_plr()
     board.initial_display_board_cpt()
-    guessed_shot_player_1 = []
+    guessed_shot_player_1 = [] # Guess List made by the player based on 1-indexing
     while True:
           print()
           player_guess_0, player_guess_1 = call_shot_player(board_size)
           computer_guess = call_shot_computer(board_size)
-          guessed_shot_player_0.add(player_guess_0)
-          guessed_shot_computer.add(computer_guess)         
-          print(guessed_shot_player_0) # to be removed - for testing purpose only.
-          print(guessed_shot_computer) # to be removed - for testing purpose only.
-          print()
-          print(player_initial_selection)
-          print(computer_initial_selection)          
+          guessed_shot_player_0.add(player_guess_0) # Guess made by the player added to the global variable
+          guessed_shot_computer.add(computer_guess) # Guess made by the computer added to the global variable
+          print()             
           print("Outcome:")
           print('=' * 35)
           right_guess_or_not_plr(player_guess_0) # Check if the guess made by the player is correct
@@ -356,11 +349,10 @@ def new_game():
           print('=' * 35)
           print()
           display_score(player_name)
-          guessed_shot_player_1.append(player_guess_1) # Selection made the player added to a list based on 1-indexing
+          guessed_shot_player_1.append(player_guess_1) # Guess made by the player added to the list based on 1-indexing
           print("You selected Rows and Columns (R,C):\n", guessed_shot_player_1)
           print('=' * 35)
           print()
-          
           if game_exit(board_size, num_ships):
                 break
     
