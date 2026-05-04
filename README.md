@@ -3,7 +3,8 @@
 1. <a>[About](#about)</a>
 2. <a>[Termminology](#terminology)</a>
 3. <a>[Live Project](#live-project)</a>
-X. <a>[Deployment](#deployment)</a>
+4. <a>[Deployment Github](#deployment-github)</a>
+
 X. <a>[Design Draft](#design-draft)</a>
 X. <a>[Design Final](#design-final)</a>
 X. <a>[Colours](#colours)</a>
@@ -42,4 +43,26 @@ The processing, within the code, is 0-indexing.
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-# Deployment
+# Deployment GitHub
+
+Using Github and Microsoft Visual Code to deploy my project
+
+### **My Repository**
+
+1. Created a new public local repository on my Github account, and copied the repository locally on my computer using Microsoft Visual Code to start building the website.
+2. Regularly and repeatedly, I committed my changes to my local repository with commands below. Each commit has its custom message.
+      - <strong>git add .</strong>
+      - <strong>git commit -m "Custom message"</strong>
+3. Finally pushing my commits to my remote repository by using the command below.
+      - <strong>git push</strong>
+
+### **Hosting**
+
+1. To start working on my website, I went onto Github and selected my repository named <strong>TheFlyingNerds_sandbox</strong>.
+2. I went to Settings > Pages
+3. I made sure the following settings were applied:
+      - Source: 'Deploy from a branch' on the dropdown menu
+      - Branch: 'Main' and 'root' from the dropdown menus
+      - Entered save
+
+### **Deployment on Github**
