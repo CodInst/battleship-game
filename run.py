@@ -8,7 +8,7 @@ computer_initial_selection = set() # set that contains the ships coordinates for
 
 def random_integer(value):
     """
-    The function will provide a random integer for the computer turn
+    The function provides a random integer for the computer's guesses.
     """
     return random.randint(0, value - 1)
 
@@ -227,8 +227,8 @@ def call_shot_computer(board_size):
     global guessed_shot_computer
     
     while True:
-          row_num_cpt = random_integer(board_size)
-          column_num_cpt = random_integer(board_size)
+          row_num_cpt = random_integer(board_size) # It generates a random number.
+          column_num_cpt = random_integer(board_size) # It generates a random number.
           selection = row_num_cpt, column_num_cpt
           
           if selection not in guessed_shot_computer: # Check if the selection has been already used.
