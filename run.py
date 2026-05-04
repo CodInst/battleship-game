@@ -141,7 +141,7 @@ def validate_input_ships(value):
 
 def initial_input_player():
       """
-      The function allowes the input of:
+      The function allowes the intial input:
       the player's name, size of the board and number of ships. 
       """  
       while True:
