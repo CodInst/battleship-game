@@ -195,7 +195,7 @@ def validate_guess_already_used(selection, guessed_shot):
 def call_shot_player(board_size):
     """
     The function allows the player to make guess by
-    selecting a row and a column.
+    inputing a row and a column.
     """
     global guessed_shot_player_0
     
@@ -213,7 +213,7 @@ def call_shot_player(board_size):
                       break
           
           selection_0 = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column based on 0-indexing.
-          selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 0-indexing.
+          selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 1-indexing.
           if validate_guess_already_used(selection_0, guessed_shot_player_0): # Check if the selection has been already used.
                 break
                        
