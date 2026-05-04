@@ -58,7 +58,7 @@ Using Github and Microsoft Visual Code to deploy my project
 
 ### **Hosting**
 
-1. To start working on my website, I went onto Github and selected my repository named <strong>TheFlyingNerds_sandbox</strong>.
+1. To start working on my website, I went onto Github and selected my repository named <strong>battleship-game</strong>.
 2. I went to Settings > Pages
 3. I made sure the following settings were applied:
       - Source: 'Deploy from a branch' on the dropdown menu
@@ -66,3 +66,6 @@ Using Github and Microsoft Visual Code to deploy my project
       - Entered save
 
 ### **Deployment on Github**
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
