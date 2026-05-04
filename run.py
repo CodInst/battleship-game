@@ -45,8 +45,9 @@ class Board:
             on the board for the computer.
             """
             global computer_initial_selection
+            
             initial_placement_computer = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the computer
-            computer_initial_selection = set(initial_placement_computer) # It adds the coordinates randomly selected on the shsips into the set.
+            computer_initial_selection = set(initial_placement_computer) # It adds the coordinates randomly selected of the ships into the set.
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
@@ -65,7 +66,7 @@ class Board:
             global player_initial_selection
             
             initial_placement_player = self.initial_placement_ships() # It creates a list of tuple composed of rows(R) and columns(C) for the player
-            player_initial_selection = set(initial_placement_player) # It adds the coordinates randomly selected on the shsips into the set.
+            player_initial_selection = set(initial_placement_player) # It adds the coordinates randomly selected of the ships into the set.
             self.board = [["." for x in range(self.board_size)] for y in range(self.board_size)] # empty board without the ships
 
             for tple in range(self.num_ships):
@@ -312,7 +313,8 @@ def new_game():
     The function starts a new game. It gives an introductory text.
     It also runs all function of the program.
     """
-    global scores, guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection 
+    global scores, guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection
+    
     print(
         """
         +======================================+
@@ -323,6 +325,7 @@ def new_game():
         |     -the number of Ships: 4,5 or 6   |
         +======================================+
         """)
+    
     player_name, board_size, num_ships = initial_input_player()
     board = Board(board_size, num_ships, player_name, "X")
     print()
@@ -340,21 +343,20 @@ def new_game():
           print()
           player_guess_0, player_guess_1 = call_shot_player(board_size)
           computer_guess = call_shot_computer(board_size)
-          print(computer_guess)
           guessed_shot_player_0.add(player_guess_0)
-          guessed_shot_player_1.append(player_guess_1)
-          guessed_shot_computer.add(computer_guess)
+          guessed_shot_computer.add(computer_guess)         
           print(guessed_shot_player_0) # to be removed - for testing purpose only.
           print(guessed_shot_computer) # to be removed - for testing purpose only.
           print()          
           print("Outcome:")
           print('=' * 35)
-          right_guess_or_not_plr(player_guess_0) # Check the guess made by the player is correct
-          right_guess_or_not_cpt(computer_guess) # Check the guess made by the computer is correct
+          right_guess_or_not_plr(player_guess_0) # Check if the guess made by the player is correct
+          right_guess_or_not_cpt(computer_guess) # Check if the guess made by the computer is correct
           print('=' * 35)
           print()
           display_score(player_name)
-          print("You selected Rows and Columns (R,C):\n", guessed_shot_player_1) # Selection made the player
+          guessed_shot_player_1.append(player_guess_1) # Selection made the player added to a list based on 1-indexing
+          print("You selected Rows and Columns (R,C):\n", guessed_shot_player_1)
           print('=' * 35)
           print()
           
