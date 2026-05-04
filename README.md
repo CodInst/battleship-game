@@ -39,7 +39,7 @@ The processing, within the code, is 0-indexing.
 # Live Project
 
 [Link](https://ultimate-battleships-05080b199617.herokuapp.com/)
-<a https://ultimate-battleships-05080b199617.herokuapp.com/">Live Project</a>
+<a href="https://ultimate-battleships-05080b199617.herokuapp.com/">Live Project</a>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
