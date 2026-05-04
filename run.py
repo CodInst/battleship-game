@@ -113,7 +113,7 @@ def initial_validate_input_player_name(value):
 
 def validate_input_board(value):
         """
-        The function raises a ValueError if board Size is not 5,6 or7.
+        The function raises a ValueError if board Size is not an integer, the value 6 or value 7.
         """
         try:
               int(value)
