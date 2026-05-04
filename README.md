@@ -31,9 +31,9 @@ The game will request you to enter a row number and column number. After the inp
 
 # Terminology
 
-I use rows (R) and columns (C) for the coordinates x and y regarding the location of the warships.<br>
-I use a board input and board output based on 1-indexing. The visual representation is also 1-indexing.<br>
-The processing, within the code, is 0-indexing.
+I use rows (R) and columns (C) for the coordinates instead of <strong>x</strong> and <strong>y</strong> regarding the location of the warships.<br>
+I use a board input and board output based on <strong>1-indexing</strong>. The visual representation is also <strong>1-indexing</strong>.<br>
+The processing, within the code, is <strong>0-indexing</strong>.
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
