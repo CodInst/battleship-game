@@ -6,6 +6,7 @@ guessed_shot_computer = set() # set that contains the guesses made by the comput
 player_initial_selection = set() # set that contains the ships coordinates for the player
 computer_initial_selection = set() # set that contains the ships coordinates for the computer
 
+
 def random_integer(value):
     """
     The function provides a random integer for the computer's guesses.
