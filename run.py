@@ -289,11 +289,11 @@ def game_exit(num_ships):
             # The condition to end the game is to cover the all grid i.e. 36 selections for a 6-size board and 49 for for a 7-size.
             print(f"The game has ended. You covered the all grid. The final score is {scores}.")
             return True
-      elif (scores['computer'] == 6):       
+      elif (scores['computer'] == num_ships):       
             # The condition to end the game is when the score reaches 6 for the computer.
             print(f"The game has ended. The computer sank all your battleships. The final score is {scores}.")
             return True
-      elif (scores['player'] == 6):       
+      elif (scores['player'] == num_ships):       
             # The condition to end the game is when the score reaches 6 for the player.
             print(f"The game has ended. You sank all computer's battleships. The final score is {scores}.")
             return True
