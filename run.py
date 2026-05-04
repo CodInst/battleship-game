@@ -52,10 +52,7 @@ class Board:
 
             for tple in range(self.num_ships):
                   self.board[initial_placement_computer[tple][0]][initial_placement_computer[tple][1]] = "X"  # it places the ships on the board
-            
-            self.display_board_info("Computer") #to be removed for test purpose                      
-            self.format_display_board() #to be removed for test purpose 
-                                    
+                                              
             return self.board
          
       def initial_display_board_plr(self):
