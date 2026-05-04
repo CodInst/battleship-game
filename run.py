@@ -279,23 +279,27 @@ def display_score(player_name):
       print(f"Computer: {scores['computer']} | {player_name}: {scores['player']}")
       print('=' * 35)
     
-def game_exit(num_ships):
+def game_exit(board_size, num_ships):
       """
       The function manages the scenarios when the game ends.
       """
       global guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
             
-      if ((len(guessed_shot_player_0) + len(player_initial_selection)) == (num_ships ** 2)) or ((len(guessed_shot_computer) + len(computer_initial_selection)) == (num_ships ** 2)):
+      if (len(guessed_shot_player_0) == (board_size ** 2)) or (len(guessed_shot_computer) == (board_size ** 2)):
             # The condition to end the game is to cover the all grid i.e. 36 selections for a 6-size board and 49 for for a 7-size.
             print(f"The game has ended. You covered the all grid. The final score is {scores}.")
             return True
       elif (scores['computer'] == num_ships):       
             # The condition to end the game is when the score reaches 6 for the computer.
-            print(f"The game has ended. The computer sank all your battleships. The final score is {scores}.")
+            print('=' * 35)
+            print(f"The game has ended.\nThe computer sank all your battleships.\nThe final score is:\n{scores}.")
+            print('=' * 35)
             return True
       elif (scores['player'] == num_ships):       
             # The condition to end the game is when the score reaches 6 for the player.
-            print(f"The game has ended. You sank all computer's battleships. The final score is {scores}.")
+            print('=' * 35)
+            print(f"The game has ended.\nYou sank all computer's battleships.\nThe final score is:\n{scores}.")
+            print('=' * 35)
             return True
 
       print(len(guessed_shot_player_0) + len(player_initial_selection)) # to be removed - for testing purpose only.
