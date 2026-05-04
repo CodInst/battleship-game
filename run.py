@@ -27,7 +27,7 @@ class Board:
 
       def format_display_board(self):
             """
-            The method format the display of the board.
+            The method formats the display of the board.
             """
             return [print("   ".join(row)) for row in self.board]
       
@@ -36,11 +36,9 @@ class Board:
             The method creates a initial random placement of ships on
             the board for the player and the computer.
             """
-            initial_board_row = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the rows in a list
-            initial_board_column = random.sample(range(0, self.board_size), self.num_ships)  # Generate unique random numbers for the columns in a list
-            initial_board = list(zip(initial_board_row, initial_board_column))
-
-            return  initial_board # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
+            # Generate unique random numbers for the rows in a list
+            # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
+            return  list(zip(random.sample(range(0, self.board_size), self.num_ships), random.sample(range(0, self.board_size), self.num_ships)))
               
       def initial_display_board_cpt(self):
             """
