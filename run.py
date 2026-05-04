@@ -2,7 +2,7 @@ import random
 import time
 
 scores = {"computer": 0, "player": 0}
-guessed_shot_player = set() # set that contains the guesses made by the player
+guessed_shot_player_0 = set() # set that contains the guesses made by the player
 guessed_shot_computer = set() # set that contains the guesses made by the computer
 player_initial_selection = set() # set that contains the ships coordinates for the player
 computer_initial_selection = set() # set that contains the ships coordinates for the computer
@@ -52,8 +52,8 @@ class Board:
             for tple in range(self.num_ships):
                   self.board[initial_placement_computer[tple][0]][initial_placement_computer[tple][1]] = "X"  # it places the ships on the board
             
-            self.display_board_info("Computer")                       
-            self.format_display_board()
+            self.display_board_info("Computer") #to be removed for test purpose                      
+            self.format_display_board() #to be removed for test purpose 
                                     
             return self.board
          
@@ -72,7 +72,7 @@ class Board:
                   self.board[initial_placement_player[tple][0]][initial_placement_player[tple][1]] = "X"  # it places the ships on the board
             
             self.display_board_info("Player")      
-            self.format_display_board()        
+            self.format_display_board() # This line will display the board       
                         
             return self.board
 
@@ -199,7 +199,7 @@ def call_shot_player(board_size):
     The function allows the player to make guess by
     selecting a row and a column.
     """
-    global guessed_shot_player
+    global guessed_shot_player_0
     
     while True:
           while True:
@@ -216,7 +216,7 @@ def call_shot_player(board_size):
           
           selection_0 = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column based on 0-indexing.
           selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 0-indexing.
-          if validate_guess_already_used(selection_0, guessed_shot_player): # Check if the selection has been already used.
+          if validate_guess_already_used(selection_0, guessed_shot_player_0): # Check if the selection has been already used.
                 break
                        
     return selection_0, selection_1
@@ -278,38 +278,41 @@ def display_score(player_name):
       print(f"Computer: {scores['computer']} | {player_name}: {scores['player']}")
       print('=' * 35)
     
-def game_exit(board_size, num_ships):
+def game_exit(num_ships):
       """
       The function manages the scenarios when the game ends.
       """
-      global guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
+      global guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection, scores
             
-      if len(guessed_shot_player|player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer|computer_initial_selection) == (num_ships ** 2):
+      if len(guessed_shot_player_0|player_initial_selection) == (num_ships ** 2) or len(guessed_shot_computer|computer_initial_selection) == (num_ships ** 2):
             # The condition to end game is to cover the all grid 36 selections for a 6-size board and 49 for for a 7-size
             print(f"The game has ended. You covered the all grid. The final score is {scores}.")
             return True
-      elif len((guessed_shot_player&player_initial_selection)) == board_size:         
+      elif len((guessed_shot_player_0&player_initial_selection)) == num_ships:         
             # The condition to end game is that the player makes the right guesses
             print(f"The game has ended. You sank all the computer's battleships. The final score is {scores}.")
             return True
-      elif len((guessed_shot_computer&computer_initial_selection)) == board_size:       
+      elif len((guessed_shot_computer&computer_initial_selection)) == num_ships:       
             # The condition to end game is that the computer makes the right guesses
             print(f"The game has ended. The computer sank all your battleships. The final score is {scores}.")
             return True
 
-      print("condition 1:", guessed_shot_player|player_initial_selection) # to be removed - for testing purpose only.
-      print(len(guessed_shot_player|player_initial_selection)) # to be removed - for testing purpose only.
-      print("condition 2:", guessed_shot_player&player_initial_selection) # to be removed - for testing purpose only.
+      print("condition 1 player:", guessed_shot_player_0|player_initial_selection) # to be removed - for testing purpose only.
+      print(len(guessed_shot_player_0|player_initial_selection)) # to be removed - for testing purpose only.
+      print("condition 1 computer:", guessed_shot_computer|computer_initial_selection) # to be removed - for testing purpose only.
+      print(len(guessed_shot_computer|computer_initial_selection)) # to be removed - for testing purpose only.
+      print("condition 2:", guessed_shot_player_0&player_initial_selection) # to be removed - for testing purpose only.
       print("condition 3:", guessed_shot_computer&computer_initial_selection) # to be removed - for testing purpose only. 
           
       return False
+
 
 def new_game():
     """
     The function starts a new game. It gives an introductory text.
     It also runs all function of the program.
     """
-    global scores, guessed_shot_player, guessed_shot_computer, player_initial_selection, computer_initial_selection 
+    global scores, guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection 
     print(
         """
         +======================================+
@@ -330,14 +333,18 @@ def new_game():
     print('=' * 35)
     print()
     board.initial_display_board_plr()
+    board.initial_display_board_cpt()
     print()
+    guessed_shot_player_1 = []
     while True:
           print()
           player_guess_0, player_guess_1 = call_shot_player(board_size)
           computer_guess = call_shot_computer(board_size)
-          guessed_shot_player.add(player_guess_0)
+          print(computer_guess)
+          guessed_shot_player_0.add(player_guess_0)
+          guessed_shot_player_1.append(player_guess_1)
           guessed_shot_computer.add(computer_guess)
-          print(guessed_shot_player) # to be removed - for testing purpose only.
+          print(guessed_shot_player_0) # to be removed - for testing purpose only.
           print(guessed_shot_computer) # to be removed - for testing purpose only.
           print()          
           print("Outcome:")
@@ -347,11 +354,11 @@ def new_game():
           print('=' * 35)
           print()
           display_score(player_name)
-          print("You selected Rows and Columns (R,C):", player_guess_1) # Selection made the player
+          print("You selected Rows and Columns (R,C):\n", guessed_shot_player_1) # Selection made the player
           print('=' * 35)
           print()
-
-          if game_exit(board_size, num_ships):
+          
+          if game_exit(num_ships):
                 break
     
 new_game()
