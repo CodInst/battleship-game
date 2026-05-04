@@ -245,7 +245,7 @@ def right_guess_or_not_plr(value):
         
     if value in computer_initial_selection:
         scores["player"] += 1
-        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation
+        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexing and changed to 1-indexing for visual representation.
         return print(f"You sank an enemy ship at {value}.")
     else:
         return print("You missed, better luck next time")
@@ -259,7 +259,7 @@ def right_guess_or_not_cpt(value):
     
     if value in player_initial_selection:
         scores["computer"] += 1
-        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation. Second change.
+        value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexing and changed to 1-indexing for visual representation.
         return print(f"Your ship at {value} has been sunk")
     else:
         return print("The computer failed to sink any of your ships")
@@ -331,7 +331,7 @@ def new_game():
     print()
     board.initial_display_board_plr()
     board.initial_display_board_cpt()
-    guessed_shot_player_1 = [] # List of Guesses made by the player based on 1-indexing
+    guessed_shot_player_1 = [] # List of Guesses made by the player based on 1-indexing.
     while True:
           print()
           player_guess_0, player_guess_1 = call_shot_player(board_size)
