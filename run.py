@@ -247,7 +247,7 @@ def right_guess_or_not_plr(value):
     global computer_initial_selection, scores
         
     if value in computer_initial_selection:
-        scores["player"] = +1
+        scores["player"] += 1
         value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation
         return print(f"You sank an enemy ship at {value}.")
     else:
@@ -261,7 +261,7 @@ def right_guess_or_not_cpt(value):
     global player_initial_selection, scores
     
     if value in player_initial_selection:
-        scores["computer"] = +1
+        scores["computer"] += 1
         value = (value[0] + 1, value[1] + 1) # The value is based on the 0-indexation and changed to 1-indexation for visual representation. Second change.
         return print(f"Your ship at {value} has been sunk")
     else:
@@ -347,7 +347,9 @@ def new_game():
           guessed_shot_computer.add(computer_guess)         
           print(guessed_shot_player_0) # to be removed - for testing purpose only.
           print(guessed_shot_computer) # to be removed - for testing purpose only.
-          print()          
+          print()
+          print(player_initial_selection)
+          print(computer_initial_selection)          
           print("Outcome:")
           print('=' * 35)
           right_guess_or_not_plr(player_guess_0) # Check if the guess made by the player is correct
