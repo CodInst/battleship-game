@@ -361,7 +361,7 @@ def new_game():
           print('=' * 35)
           print()
           
-          if game_exit(num_ships):
+          if game_exit(board_size, num_ships):
                 break
     
 new_game()
