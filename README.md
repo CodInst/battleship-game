@@ -258,7 +258,7 @@ The code will check if the input is an integer first and if the integer is withi
 
 #### 2. Selection of Rows and columns
 
-def call_shot_player(board_size):
+      def call_shot_player(board_size):
     """
     The function allows the player to make guess by
     putting-in a row and a column.
