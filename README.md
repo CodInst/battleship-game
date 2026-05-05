@@ -50,10 +50,11 @@ Using Github and Microsoft Visual Code to deploy my project
 ### **Project setup in GitHub**
 
 1. To setup the repository, I used <a href="https://github.com/Code-Institute-Org/p3-template" target="_blank">the code institute template</a>
-2. I created a new public local repository on my Github account, and copied the repository locally on my computer using Microsoft Visual Code.
+2. I created a new public local repository on my Github account. I copied the repository locally on my computer using Microsoft Visual Code.
 3. I used the command <strong><em>git clone https://github.com/CodInst/battleship-game.git</em></strong> in Microsoft-Visual-Code terminal.
 4. I created and activated the virtual environment:
 <img width="472" height="751" alt="Image" src="https://github.com/user-attachments/assets/e436d720-a6ec-4354-b0b7-76f715bd63ac" />
+5. To confirm, it is activated, you should see <strong><em>.venv</em></strong> at the bottom of Microsoft Visual Code.
 
 ### **Working with My Repository**
 
