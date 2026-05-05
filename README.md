@@ -55,6 +55,8 @@ Using Github and Microsoft Visual Code to deploy my project
 4. I created and activated the virtual environment:
 <img width="472" height="751" alt="Image" src="https://github.com/user-attachments/assets/e436d720-a6ec-4354-b0b7-76f715bd63ac" />
 5. To confirm, it is activated, you should see <strong><em>.venv</em></strong> at the bottom of Microsoft Visual Code.
+<img width="838" height="112" alt="Image" src="https://github.com/user-attachments/assets/91e4a98d-2f28-41fe-a69a-edb60a01e7f2" />
+6. In my local copy, I created the  file <strong><em>.gitignore</em></strong>. I added <strong><em>.venv</em></strong> within the file and save it.
 
 ### **Working with My Repository**
 
@@ -63,10 +65,6 @@ Using Github and Microsoft Visual Code to deploy my project
       - <strong>git commit -m "Custom message"</strong>
 2. Finally pushing my commits to my remote repository by using the command below.
       - <strong>git push</strong>
-
-
-
-### **Deployment on Github**
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
