@@ -383,8 +383,16 @@ I opened the app and test it out.
 # Testing
 
 ### Manual Testing
-I performed a manual testing along the coding process with most of time with print message.<br>
+I performed a manual testing along the coding process with most of time a print message.<br>
 I put in place the final loop within new_game() only at the end to allow an easy troubleshooting.<br>
+
+### PEP8 Python Validator
+
+#### Before
+I checked my code on <strong><em>https://pep8ci.herokuapp.com/</em></strong> and got the following output:
+
+#### After
+
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
