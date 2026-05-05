@@ -211,10 +211,10 @@ I imported the library <strong>random</strong> and used two methods <strong><em>
 #### The class Board includes five methods and one instance method.
 <img width="536" height="333" alt="Image" src="https://github.com/user-attachments/assets/9cc83b29-1e07-4c39-811c-52151d4ac554" /><br>
 
-#### The codes includes a main function.
+#### The codes include a main function.
 <img width="160" height="79" alt="Image" src="https://github.com/user-attachments/assets/32f85a42-e1c4-4835-8c3a-16f1194b5e40" /><br>
 
-#### The codes includes 13 functions.
+#### The codes include 13 functions.
 <img width="484" height="459" alt="Image" src="https://github.com/user-attachments/assets/bed22bef-9fad-46bc-87a8-1940f5eda95f" /><br>
 <img width="245" height="41" alt="Image" src="https://github.com/user-attachments/assets/42e1c8fe-8941-49c4-a47d-902d1615f2a0" /><br>
 
@@ -416,8 +416,6 @@ Please find below a glimpse of the potential code to implement.<br>
             game_end = True
 
     
-<a align="right">[Return Top](#table-of-contents)</a>
-
 ### Display the board
 Displaying the player's board at each iteration could have added a value to the user-experience.
     
