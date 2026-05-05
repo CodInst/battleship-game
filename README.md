@@ -7,11 +7,13 @@
 5. <a>[Design Overview](#design-overview)</a>
 6. <a>[Design Breakdown](#design-breakdown)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
-      - <a>[Testing with W3C CSS](#testing-with-w3c-css)</a>
-      - <a>[Testing with W3C HTML](#testing-with-w3c-html)</a>
-      - <a>[Testing with Chrome Lighthouse](#testing-with-chrome-lighthouse)</a>
-8. <a>[Project Revision and Manual Testing](#project-revision-and-manual-testing)</a>
-9. <a>[Credits](#credits)</a>
+      - <a>[Preparation](#preparation)</a>
+      - <a>[Add Buildpacks](#add-buildpacks)</a>
+      - <a>[Connect GitHub](#connect-gitHub)</a>
+      - <a>[Automatic Deployment](#automatic-deployment)</a>
+      - <a>[Deploy Main Branch](#deploy-main-branch)</a>
+      - <a>[Open App](#open-app)</a>
+8. <a>[Credits](#credits)</a>
 
 # About
 
@@ -81,18 +83,56 @@ To tackle the project, I decided break down the project into smaller steps, as s
 
 # Deployment Heroku
 
-<img width="1055" height="157" alt="Image" src="https://github.com/user-attachments/assets/2f8cfd42-2f5f-4453-b481-065ad1b6fdad" />
+## Preparation
+1. The unused libraries were already removed. I am using only one library: random.<br>
+2. I did not use any libraries such <strong><em>pprint</em></strong> or other commands that will be not recognise by <strong>Heroku</strong>.<br>
+3. I added a character ‘\n’ line for each input to take into account the <strong>Heroku</strong> console.<br>
+4. I created a requirement file with the command <strong><em>pip3 freeze > requirements.txt</em></strong><br>
+5. I saved last modifications of the file to GitHub with a last <strong><em>git push</em></strong>.<br>
 
-<img width="641" height="525" alt="Image" src="https://github.com/user-attachments/assets/bda83ad2-0590-4cdb-a344-ed922a17f4f6" />
+<a align="right">[Return Top](#table-of-contents)</a>
 
-<img width="973" height="261" alt="Image" src="https://github.com/user-attachments/assets/e8daf5f5-f887-494e-ab45-3bc42139bab6" />
+## Create an App
 
-<img width="709" height="330" alt="Image" src="https://github.com/user-attachments/assets/75f0d10b-fde3-407e-b051-7e39ecdc8f37" />
+I logged in on Heroku and created an app via the main dashboard.<br>
+<img width="1055" height="157" alt="Image" src="https://github.com/user-attachments/assets/2f8cfd42-2f5f-4453-b481-065ad1b6fdad" /><br>
+<img width="641" height="525" alt="Image" src="https://github.com/user-attachments/assets/bda83ad2-0590-4cdb-a344-ed922a17f4f6" /><br>
 
-<img width="716" height="131" alt="Image" src="https://github.com/user-attachments/assets/19441c5b-2aa3-4fa9-beeb-0ce89c133730" />
+<a align="right">[Return Top](#table-of-contents)</a>
 
-<img width="622" height="251" alt="Image" src="https://github.com/user-attachments/assets/4643c5df-fb41-48db-a2db-1e074adaa9b3" />
+## Add Buildpacks
 
-<img width="717" height="338" alt="Image" src="https://github.com/user-attachments/assets/48b5ff1f-21d5-4a27-988a-5dcc283680e0" />
+I navigated to <strong>settings</strong> and added the following buildpacks: <strong><em>Python</em></strong> and <strong><em>NodeJS</em></strong>.<br>
+<img width="973" height="261" alt="Image" src="https://github.com/user-attachments/assets/e8daf5f5-f887-494e-ab45-3bc42139bab6"/><br>
 
-<img width="669" height="445" alt="Image" src="https://github.com/user-attachments/assets/bfd21093-6315-4341-9414-77fd13e4ba91" />
+<a align="right">[Return Top](#table-of-contents)</a>
+
+## Connect GitHub
+
+I navigated to <strong>deploy</strong> and performed the following actions.<br>
+I connected it to my GitHub and select my repository.<br>
+<img width="709" height="330" alt="Image" src="https://github.com/user-attachments/assets/75f0d10b-fde3-407e-b051-7e39ecdc8f37" /><br>
+<img width="716" height="131" alt="Image" src="https://github.com/user-attachments/assets/19441c5b-2aa3-4fa9-beeb-0ce89c133730" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+## Automatic Deployment
+
+I allowed <strong>automatic deployment</strong> as the project has been thoroughly tested.<br>
+<img width="622" height="251" alt="Image" src="https://github.com/user-attachments/assets/4643c5df-fb41-48db-a2db-1e074adaa9b3" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+## Deploy Main Branch
+
+I deployed <strong>the main branch</strong>.<br>
+<img width="717" height="338" alt="Image" src="https://github.com/user-attachments/assets/48b5ff1f-21d5-4a27-988a-5dcc283680e0" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+## Open App
+
+I opened the app and test it out.
+<img width="669" height="445" alt="Image" src="https://github.com/user-attachments/assets/bfd21093-6315-4341-9414-77fd13e4ba91" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
