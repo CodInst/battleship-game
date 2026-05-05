@@ -14,8 +14,8 @@
       - <a>[Comments and Descriptions](#comments-and-descriptions)</a>
       - <a>[Libraries](#libraries)</a>
       - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a>
-      - <a>[Input Validation](input-validation)</a>
-      - <a>[Code Layout](code-layout)</a>
+      - <a>[Input Validation](#input-validation)</a>
+      - <a>[Code Layout](#code-layout)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
