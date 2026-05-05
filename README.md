@@ -10,7 +10,7 @@
 7. <a>[Code Structure](#code-structure)</a>
       - <a>[Main Approach](#main-approach)</a>
       - <a>[Global Variables](#global-variables)</a>
-      - <a>[Main Approach](#main-approach)</a>
+      - <a>[Data Structures](#data-structures)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -135,7 +135,53 @@ I made use of five global variables.
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-### Global Variables
+### Data Structures
+I used a multitude of data structures in order to explore their uses and implcations in this project.
+
+#### Class
+
+      class Board:
+      """
+      The class Board takes in, the size of the board, the number
+      of ships, the player's name. Methods to generate random,
+      placements for the ships and place it in the board.
+      """
+      def __init__(self, board_size, num_ships, player_name):
+            self.board_size = board_size
+            self.num_ships = num_ships
+            self.player_name = player_name
+            self.board = [] # the board is an empty list
+            self.delim_display = ""
+      
+#### Dictionary
+
+      scores = {"computer": 0, "player": 0} # Dictionary to process the score
+      
+#### Set
+
+      guessed_shot_player_0 = set() # set that contains the guesses made by the player
+      guessed_shot_computer = set() # set that contains the guesses made by the computer
+      player_initial_selection = set() # set that contains the ships coordinates for the player
+      computer_initial_selection = set() # set that contains the ships coordinates for the computer
+      
+#### List
+
+      guessed_shot_player_1 = [] # List of Guesses made by the player based on 1-indexing.
+      
+#### Tuple
+
+      def initial_placement_ships(self):
+            """
+            The method creates a initial random placement of ships on
+            the board for the player and the computer.
+            """
+            # Generate unique random numbers for the rows in a list
+            # It creates a list of tuple composed of rows(R) and columns(C). [(R1,C1), (R2,C2), (R3,C3),...]
+            return  list(zip(random.sample(range(0, self.board_size), self.num_ships), random.sample(range(0, self.board_size), self.num_ships)))
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Data Structure
 
 # Deployment Heroku
 
