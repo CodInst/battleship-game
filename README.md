@@ -47,23 +47,22 @@ The processing, within the code, is <strong>0-indexing</strong>.
 
 Using Github and Microsoft Visual Code to deploy my project
 
-### **My Repository**
+### **Project setup in GitHub**
 
-1. Created a new public local repository on my Github account, and copied the repository locally on my computer using Microsoft Visual Code to start building the website.
-2. Regularly and repeatedly, I committed my changes to my local repository with commands below. Each commit has its custom message.
+1. To setup the repository, I used <a href="https://github.com/Code-Institute-Org/p3-template" target="_blank">the code institute template</a>
+2. I created a new public local repository on my Github account, and copied the repository locally on my computer using Microsoft Visual Code.
+3. I used the command <strong><em>git clone https://github.com/CodInst/battleship-game.git</em></strong> in Microsoft-Visual-Code terminal.
+4. I created and activated the virtual environment:
+
+### **Working with My Repository**
+
+1. Regularly and repeatedly, I committed my changes to my local repository with commands below. Each commit has its custom message.
       - <strong>git add .</strong>
       - <strong>git commit -m "Custom message"</strong>
-3. Finally pushing my commits to my remote repository by using the command below.
+2. Finally pushing my commits to my remote repository by using the command below.
       - <strong>git push</strong>
 
-### **Hosting**
 
-1. To start working on my website, I went onto Github and selected my repository named <strong>battleship-game</strong>.
-2. I went to Settings > Pages
-3. I made sure the following settings were applied:
-      - Source: 'Deploy from a branch' on the dropdown menu
-      - Branch: 'Main' and 'root' from the dropdown menus
-      - Entered save
 
 ### **Deployment on Github**
 
