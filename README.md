@@ -11,6 +11,9 @@
       - <a>[Main Approach](#main-approach)</a>
       - <a>[Global Variables](#global-variables)</a>
       - <a>[Data Structures](#data-structures)</a>
+      - <a>[Comments and Descriptions](#comments-and-descriptions)</a>
+      - <a>[Libraries](#libraries)</a>
+      - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a> 
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -136,7 +139,7 @@ I made use of five global variables.
 <a align="right">[Return Top](#table-of-contents)</a>
 
 ### Data Structures
-I used a multitude of data structures in order to explore their uses and implcations in this project.
+I used a multitude of data structures in order to explore their uses and implications in this project.
 
 #### Class
 
@@ -181,7 +184,34 @@ I used a multitude of data structures in order to explore their uses and implcat
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-### Data Structure
+### Comments and Descriptions
+I made an extensive use of comments across the code. I also include a description for each functions and methods
+
+      def new_game():
+    """
+    The function starts a new game. It gives an introductory text.
+    It also runs all function of the program.
+    """
+    global scores, guessed_shot_player_0, guessed_shot_computer, player_initial_selection, computer_initial_selection
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Libraries
+I imported the library <strong>random</strong>.
+
+      import random
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Functions and Instance Methods
+#### The class Board includes five methods.
+
+#### The codes includes a main function.
+
+#### The class includes 12 functions.
+
+
+<a align="right">[Return Top](#table-of-contents)</a>
 
 # Deployment Heroku
 
