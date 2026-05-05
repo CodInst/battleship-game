@@ -15,7 +15,6 @@
       - <a>[Libraries](#libraries)</a>
       - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a>
       - <a>[Input Validation](#input-validation)</a>
-      - <a>[Code Layout](#code-layout)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -323,10 +322,6 @@ The code will check if the input is an integer first and if the integer is withi
     
     return True
 
-### Code Layout
-The code takes into account four types of input validations.
-
-
 <a align="right">[Return Top](#table-of-contents)</a>
 
 # Deployment Heroku
@@ -391,8 +386,40 @@ I opened the app and test it out.
 
 # Addtional Features
 
+### Timer
+I was hoping to have time to include a timer to end the game but ran out of time.<br>
+Please find below a glimpse of the potential code to implement<br>
+
+      import time
+
+
+    time_starting = time.time_ns()
+    hour_starting = time.localtime()[3]
+    minutes_starting = time.localtime()[4]
+    game_time = 900
+    game_end = False
+    # Start game
+    print(f"Your game started at {hour_starting}.{minutes_starting}, It will end in 15 minutes.")
+
+    # at each iteration
+    time_elapsed = time.time_ns() - time_starting
+
+    # loop checker
+    While game_end == False:
+        # game
+        time_elapsed = time.time_ns() - time_starting
+        if time_elapsed >= game_time:
+            game_end = True
+
+
+
+### Display the board
+Displaying the player's board at each iteration could have added a value to the user-experience.
+    
 <a align="right">[Return Top](#table-of-contents)</a>
 
 # Credits
+
+The design of the project was drafted based on the guidelines provided in the code-institute project scope. Particularly the video.
 
 <a align="right">[Return Top](#table-of-contents)</a>
