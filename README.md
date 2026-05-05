@@ -394,10 +394,10 @@ I checked my code on <strong><em>https://pep8ci.herokuapp.com/</em></strong> and
 
 #### After
 <img width="1380" height="682" alt="Image" src="https://github.com/user-attachments/assets/9761c06c-eabc-4092-9987-85147189d2b6" /><br>
-I checked the through the code:
-1-The 4-spaces indentation
-2-The lines over 79 characters
-Despite the checking, I had difficulties to format lines over 79 characters and left them in the code.
+I checked through the code, the following layouts:<br>
+1-The 4-spaces indentation<br>
+2-The lines over 79 characters<br>
+Despite the checking, I had difficulties to format lines over 79 characters and left them in the code.<br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
