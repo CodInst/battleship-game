@@ -4,8 +4,8 @@
 2. <a>[Termminology](#terminology)</a>
 3. <a>[Live Project](#live-project)</a>
 4. <a>[Deployment Github](#deployment-github)</a>
-5. <a>[Design Draft](#design-draft)</a>
-6. <a>[Design Final](#design-final)</a>
+5. <a>[Design Overview](#design-overview)</a>
+6. <a>[Design Breakdown](#design-breakdown)</a>
 7. <a>[Testing](#testing)</a>
       - <a>[Testing with W3C CSS](#testing-with-w3c-css)</a>
       - <a>[Testing with W3C HTML](#testing-with-w3c-html)</a>
@@ -65,3 +65,12 @@ Using Github and Microsoft Visual Code to deploy my project
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
+# Design Overview
+
+Based on the project-scope-3 video produced by Code Insitute, I designed in Miscrosoft Visio, a flow chart describing the steps.
+
+<img width="601" height="847" alt="Image" src="https://github.com/user-attachments/assets/13e55f4e-abcb-4be9-b03d-f7ce8e5b9e10" />
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+# Design Breakdown
