@@ -390,9 +390,14 @@ I put in place the final loop within new_game() only at the end to allow an easy
 
 #### Before
 I checked my code on <strong><em>https://pep8ci.herokuapp.com/</em></strong> and got the following output:
+<img width="1334" height="607" alt="Image" src="https://github.com/user-attachments/assets/25fcec34-9296-4559-81d8-882a114e670d" /><br>
 
 #### After
-
+<img width="1380" height="682" alt="Image" src="https://github.com/user-attachments/assets/9761c06c-eabc-4092-9987-85147189d2b6" /><br>
+I checked the through the code:
+1-The 4-spaces indentation
+2-The lines over 79 characters
+Despite the checking, I had difficulties to format lines over 79 characters and left them in the code.
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
