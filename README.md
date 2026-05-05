@@ -22,6 +22,7 @@
       - <a>[Automatic Deployment](#automatic-deployment)</a>
       - <a>[Deploy Main Branch](#deploy-main-branch)</a>
       - <a>[Open App](#open-app)</a>
+8. <a>[Testing](#testing)</a>
 8. <a>[Credits](#credits)</a>
 
 # About
@@ -198,7 +199,7 @@ I made an extensive use of comments across the code. I also include a descriptio
 <a align="right">[Return Top](#table-of-contents)</a>
 
 ### Libraries
-I imported the library <strong>random</strong>.
+I imported the library <strong>random</strong> and used two methods <strong><em>.randint()</em></strong> and <strong><em>.sample()</em></strong>.
 
       import random
 
