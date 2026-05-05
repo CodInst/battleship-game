@@ -5,16 +5,13 @@
 3. <a>[Live Project](#live-project)</a>
 4. <a>[Deployment Github](#deployment-github)</a>
 5. <a>[Design Draft](#design-draft)</a>
-X. <a>[Design Final](#design-final)</a>
-X. <a>[Colours](#colours)</a>
-X. <a>[Fonts](#fonts)</a>
-X. <a>[Features](#features)</a>
-X. <a>[Testing](#testing)</a>
+6. <a>[Design Final](#design-final)</a>
+7. <a>[Testing](#testing)</a>
       - <a>[Testing with W3C CSS](#testing-with-w3c-css)</a>
       - <a>[Testing with W3C HTML](#testing-with-w3c-html)</a>
       - <a>[Testing with Chrome Lighthouse](#testing-with-chrome-lighthouse)</a>
-X. <a>[Project Revision and Manual Testing](#project-revision-and-manual-testing)</a>
-x. <a>[Credits](#credits)</a>
+8. <a>[Project Revision and Manual Testing](#project-revision-and-manual-testing)</a>
+9. <a>[Credits](#credits)</a>
 
 # About
 
