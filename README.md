@@ -13,7 +13,8 @@
       - <a>[Data Structures](#data-structures)</a>
       - <a>[Comments and Descriptions](#comments-and-descriptions)</a>
       - <a>[Libraries](#libraries)</a>
-      - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a> 
+      - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a>
+      - <a>[Input Validation](input-validation)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -211,9 +212,113 @@ I imported the library <strong>random</strong>.
 #### The codes includes a main function.
 <img width="160" height="79" alt="Image" src="https://github.com/user-attachments/assets/32f85a42-e1c4-4835-8c3a-16f1194b5e40" /><br>
 
-#### The class includes 13 functions.
+#### The codes includes 13 functions.
 <img width="484" height="459" alt="Image" src="https://github.com/user-attachments/assets/bed22bef-9fad-46bc-87a8-1940f5eda95f" /><br>
 <img width="245" height="41" alt="Image" src="https://github.com/user-attachments/assets/42e1c8fe-8941-49c4-a47d-902d1615f2a0" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Input Validation
+The code takes into account four types of input validations.
+
+#### 1. Integer and Integer within the options offered - Board size / Number of Ships
+The code will check if the input is an integer first and if the integer is within the options offered
+
+<strong>Board szie</strong>
+    
+        def validate_input_board(value):
+        """
+        The function raises a ValueError if board Size is not an integer, the value 6 or value 7.
+        """
+        try:
+              int(value)
+              if int(value) not in [6,7]:
+                    raise ValueError
+        except ValueError:
+              print(f"Error: the board size is 6 or 7, you provided {value}, please try again.\n")
+              return False  
+    
+        return True
+
+<strong>Number of Ships</strong>
+    
+        def validate_input_ships(value):
+      """
+      The function raises a ValueError if A number of Ships is not 4,5 or 6.
+      """
+      try:
+            int(value)
+            if int(value) not in [4,5,6]:
+                    raise ValueError
+      except ValueError:
+            print(f"Error: the number of ships is 4,5 or 6, you provided {value}, please try again.\n")
+            return False  
+    
+      return True
+
+#### 2. Selection of Rows and columns
+
+def call_shot_player(board_size):
+    """
+    The function allows the player to make guess by
+    putting-in a row and a column.
+    """
+    global guessed_shot_player_0
+    
+    while True:
+          while True:
+                print(f"Select a Row Number between 1 and {board_size} included")
+                row_num_plr = input("\n")
+                if validate_integer_grid(row_num_plr, board_size): # Check if the row is an integer.
+                      break
+          
+          while True:
+                print(f"Select a Column Number between 1 and {board_size} included")
+                column_num_plr = input("\n")
+                if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer.
+                      break
+          
+          selection_0 = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column based on 0-indexing.
+          selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 1-indexing.
+          if validate_guess_already_used(selection_0, guessed_shot_player_0): # Check if the selection has been already used.
+                break
+                       
+    return selection_0, selection_1
+
+#### 3. player name within the acceptance criteria
+
+      def initial_validate_input_player_name(value):
+        """
+        The function raises a ValueError if the player name is an
+        empty string but allow special character except space.
+        """
+        try:
+              if value == '' or value.isspace():
+                    raise ValueError(
+                          f"The name should contain at least a charcater"
+                    )
+        except ValueError as e:
+              print(f"Invalid data: {e}, please try again.\n")
+              return False
+        
+        return True
+
+#### 4. Row and column already selected
+
+      def validate_guess_already_used(selection, guessed_shot):
+    """
+    The function raises a ValueError if the selection has already
+    been used.
+    """
+    try:
+          if selection in guessed_shot:
+                raise ValueError
+
+    except ValueError:
+          print(f"You have already used these numbers Row: {selection[0] + 1} and Column: {selection[1] + 1}. ")
+          return False  
+    
+    return True
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
