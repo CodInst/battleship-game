@@ -54,8 +54,10 @@ Using Github and Microsoft Visual Code to deploy my project
 3. I used the command <strong><em>git clone https://github.com/CodInst/battleship-game.git</em></strong> in Microsoft-Visual-Code terminal.
 4. I created and activated the virtual environment:
 <img width="472" height="751" alt="Image" src="https://github.com/user-attachments/assets/e436d720-a6ec-4354-b0b7-76f715bd63ac" />
+<br>
 5. To confirm, it is activated, you should see <strong><em>.venv</em></strong> at the bottom of Microsoft Visual Code.
 <img width="838" height="112" alt="Image" src="https://github.com/user-attachments/assets/91e4a98d-2f28-41fe-a69a-edb60a01e7f2" />
+<br>
 6. In my local copy, I created the  file <strong><em>.gitignore</em></strong>. I added <strong><em>.venv</em></strong> within the file and save it.
 
 ### **Working with My Repository**
