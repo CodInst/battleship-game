@@ -7,6 +7,10 @@
 4. <a>[Deployment Github](#deployment-github)</a>
 5. <a>[Design Overview](#design-overview)</a>
 6. <a>[Design Breakdown](#design-breakdown)</a>
+7. <a>[Code Structure](#code-structure)</a>
+      - <a>[Main Approach](#main-approach)</a>
+      - <a>[Global Variables](#global-variables)</a>
+      - <a>[Main Approach](#main-approach)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -81,6 +85,57 @@ To tackle the project, I decided break down the project into smaller steps, as s
 <img width="593" height="851" alt="Image" src="https://github.com/user-attachments/assets/a876cc88-20e7-4810-bfb7-897703bfb0d0" />
 
 <a align="right">[Return Top](#table-of-contents)</a>
+
+# Code Structure
+
+### Main Approach
+I wanted to allow the input from player and the output displaying the outcomes to be based on <strong><em>1-indexing</em></strong> for user friendliness.<br>
+The code, within, will be processed based on <strong><em>0-indexing</em></strong>.<br>
+In the code below, for example:<br>
+      -<strong><em>selection_0</em></strong> is <strong><em>0-indexing</em></strong>.<br>
+      -<strong><em>selection_1</em></strong> is <strong><em>1-indexing</em></strong>.<br>
+
+      def call_shot_player(board_size):
+    """
+    The function allows the player to make guess by
+    putting-in a row and a column.
+    """
+    global guessed_shot_player_0
+    
+    while True:
+          while True:
+                print(f"Select a Row Number between 1 and {board_size} included")
+                row_num_plr = input("\n")
+                if validate_integer_grid(row_num_plr, board_size): # Check if the row is an integer.
+                      break
+          
+          while True:
+                print(f"Select a Column Number between 1 and {board_size} included")
+                column_num_plr = input("\n")
+                if validate_integer_grid(column_num_plr, board_size): # Check if the column is an integer.
+                      break
+          
+          selection_0 = int(row_num_plr) - 1, int(column_num_plr) - 1 # It gives a tuple composed of a row and a column based on 0-indexing.
+          selection_1 = int(row_num_plr), int(column_num_plr) # It gives a tuple composed of a row and a column based on 1-indexing.
+          if validate_guess_already_used(selection_0, guessed_shot_player_0): # Check if the selection has been already used.
+                break
+                       
+    return selection_0, selection_1
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Global Variables
+I made use of five global variables.
+
+      scores = {"computer": 0, "player": 0} # Dictionary to process the score
+      guessed_shot_player_0 = set() # set that contains the guesses made by the player
+      guessed_shot_computer = set() # set that contains the guesses made by the computer
+      player_initial_selection = set() # set that contains the ships coordinates for the player
+      computer_initial_selection = set() # set that contains the ships coordinates for the computer
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+### Global Variables
 
 # Deployment Heroku
 
