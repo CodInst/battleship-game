@@ -15,6 +15,7 @@
       - <a>[Libraries](#libraries)</a>
       - <a>[Functions and Instance Methods](#functions-and-instance-methods)</a>
       - <a>[Input Validation](input-validation)</a>
+      - <a>[Code Layout](code-layout)</a>
 7. <a>[Deployment Heroku](#deployment-heroku)</a>
       - <a>[Preparation](#preparation)</a>
       - <a>[Add Buildpacks](#add-buildpacks)</a>
@@ -23,7 +24,8 @@
       - <a>[Deploy Main Branch](#deploy-main-branch)</a>
       - <a>[Open App](#open-app)</a>
 8. <a>[Testing](#testing)</a>
-8. <a>[Credits](#credits)</a>
+9. <a>[Addtional Features](#addtional-features)</a>
+10. <a>[Credits](#credits)</a>
 
 # About
 
@@ -321,6 +323,10 @@ The code will check if the input is an integer first and if the integer is withi
     
     return True
 
+### Code Layout
+The code takes into account four types of input validations.
+
+
 <a align="right">[Return Top](#table-of-contents)</a>
 
 # Deployment Heroku
@@ -376,5 +382,17 @@ I deployed <strong>the main branch</strong>.<br>
 
 I opened the app and test it out.
 <img width="669" height="445" alt="Image" src="https://github.com/user-attachments/assets/bfd21093-6315-4341-9414-77fd13e4ba91" /><br>
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+# Testing
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+# Addtional Features
+
+<a align="right">[Return Top](#table-of-contents)</a>
+
+# Credits
 
 <a align="right">[Return Top](#table-of-contents)</a>
