@@ -1,4 +1,5 @@
-# Ultimate BattleShips - Table of Contents
+# Ultimate BattleShips
+## Table of Contents
 
 1. <a>[About](#about)</a>
 2. <a>[Termminology](#terminology)</a>
@@ -83,7 +84,7 @@ To tackle the project, I decided break down the project into smaller steps, as s
 
 # Deployment Heroku
 
-## Preparation
+### Preparation
 1. The unused libraries were already removed. I am using only one library: random.<br>
 2. I did not use any libraries such <strong><em>pprint</em></strong> or other commands that will be not recognise by <strong>Heroku</strong>.<br>
 3. I added a character ‘\n’ line for each input to take into account the <strong>Heroku</strong> console.<br>
@@ -92,7 +93,7 @@ To tackle the project, I decided break down the project into smaller steps, as s
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Create an App
+### Create an App
 
 I logged in on Heroku and created an app via the main dashboard.<br>
 <img width="1055" height="157" alt="Image" src="https://github.com/user-attachments/assets/2f8cfd42-2f5f-4453-b481-065ad1b6fdad" /><br>
@@ -100,14 +101,14 @@ I logged in on Heroku and created an app via the main dashboard.<br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Add Buildpacks
+### Add Buildpacks
 
 I navigated to <strong>settings</strong> and added the following buildpacks: <strong><em>Python</em></strong> and <strong><em>NodeJS</em></strong>.<br>
 <img width="973" height="261" alt="Image" src="https://github.com/user-attachments/assets/e8daf5f5-f887-494e-ab45-3bc42139bab6"/><br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Connect GitHub
+### Connect GitHub
 
 I navigated to <strong>deploy</strong> and performed the following actions.<br>
 I connected it to my GitHub and select my repository.<br>
@@ -116,21 +117,21 @@ I connected it to my GitHub and select my repository.<br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Automatic Deployment
+### Automatic Deployment
 
 I allowed <strong>automatic deployment</strong> as the project has been thoroughly tested.<br>
 <img width="622" height="251" alt="Image" src="https://github.com/user-attachments/assets/4643c5df-fb41-48db-a2db-1e074adaa9b3" /><br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Deploy Main Branch
+### Deploy Main Branch
 
 I deployed <strong>the main branch</strong>.<br>
 <img width="717" height="338" alt="Image" src="https://github.com/user-attachments/assets/48b5ff1f-21d5-4a27-988a-5dcc283680e0" /><br>
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
-## Open App
+### Open App
 
 I opened the app and test it out.
 <img width="669" height="445" alt="Image" src="https://github.com/user-attachments/assets/bfd21093-6315-4341-9414-77fd13e4ba91" /><br>
