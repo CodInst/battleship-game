@@ -40,7 +40,7 @@ The processing, within the code, is <strong>0-indexing</strong>.
 
 # Deployment GitHub
 
-Using Github and Microsoft Visual Code to deploy my project
+Using Github and Microsoft Visual Code to deploy my project.
 
 ### **Project setup in GitHub**
 
@@ -67,10 +67,14 @@ Using Github and Microsoft Visual Code to deploy my project
 
 # Design Overview
 
-Based on the project-scope-3 video produced by Code Insitute, I designed in Miscrosoft Visio, a flow chart describing the steps.
-
+Based on the project-scope-3 video produced by Code Insitute, I designed in Miscrosoft Visio, a flow chart describing the steps:
 <img width="601" height="847" alt="Image" src="https://github.com/user-attachments/assets/13e55f4e-abcb-4be9-b03d-f7ce8e5b9e10" />
 
 <a align="right">[Return Top](#table-of-contents)</a>
 
 # Design Breakdown
+
+To tackle the project, I decided break down the project into smaller steps, as shown below:
+<img width="593" height="851" alt="Image" src="https://github.com/user-attachments/assets/a876cc88-20e7-4810-bfb7-897703bfb0d0" />
+
+
