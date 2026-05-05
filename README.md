@@ -382,13 +382,17 @@ I opened the app and test it out.
 
 # Testing
 
+### Manual Testing
+I performed a manual testing along the coding process with most of time with print message.<br>
+I put in place the final loop within new_game() only at the end to allow an easy troubleshooting.<br>
+
 <a align="right">[Return Top](#table-of-contents)</a>
 
 # Addtional Features
 
 ### Timer
-I was hoping to have time to include a timer to end the game but ran out of time.<br>
-Please find below a glimpse of the potential code to implement<br>
+I was hoping to have time to include a 15-minutes timer to end the game but ran out of time.<br>
+Please find below a glimpse of the potential code to implement.<br>
 
       import time
 
@@ -411,7 +415,8 @@ Please find below a glimpse of the potential code to implement<br>
         if time_elapsed >= game_time:
             game_end = True
 
-
+    
+<a align="right">[Return Top](#table-of-contents)</a>
 
 ### Display the board
 Displaying the player's board at each iteration could have added a value to the user-experience.
