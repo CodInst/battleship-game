@@ -4,13 +4,11 @@
 2. <a>[Termminology](#terminology)</a>
 3. <a>[Live Project](#live-project)</a>
 4. <a>[Deployment Github](#deployment-github)</a>
-
-X. <a>[Design Draft](#design-draft)</a>
+5. <a>[Design Draft](#design-draft)</a>
 X. <a>[Design Final](#design-final)</a>
 X. <a>[Colours](#colours)</a>
 X. <a>[Fonts](#fonts)</a>
 X. <a>[Features](#features)</a>
-X. <a>[Codes](#codes)</a>
 X. <a>[Testing](#testing)</a>
       - <a>[Testing with W3C CSS](#testing-with-w3c-css)</a>
       - <a>[Testing with W3C HTML](#testing-with-w3c-html)</a>
